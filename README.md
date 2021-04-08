@@ -8,5 +8,9 @@
   ```npm run client```
 4. To run both server(cd to server)
    ```npm run sv```
+   
+ ## PORTS(dev mode)
+     1. Server: localhost:5000
+     2. Client : localhost:3000
 
 
