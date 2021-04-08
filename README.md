@@ -1,4 +1,4 @@
-#Installation
+## Installation
 
 1. Make Sure Node is installed.
    ```bashnode node --version```
