@@ -8,9 +8,9 @@ export default function App () {
   return (
     <BrowserRouter>
       <div>
-        <Route exact path='/' component={Dashboard} />
+        <Route exact path='/' component={Login} />
         <Route path='/signup' component={SignUp} />
-        <Route path='/signin' component={Login} />
+        <Route path='/userDashboard' component={Dashboard} />
       </div>
     </BrowserRouter>
   )

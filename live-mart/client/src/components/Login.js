@@ -12,7 +12,6 @@ import Grid from '@material-ui/core/Grid'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
-import GoogleButton from 'react-google-button'
 
 function Copyright () {
   return (
@@ -33,7 +32,7 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     backgroundImage:
-      'url(https://assets.skyfilabs.com/images/blog/online-grocery-recommendation-using-machine-learning.webp)',
+      'url(https://miro.medium.com/max/7914/0*rkDUK_3g6OhkCzX8)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light'

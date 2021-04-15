@@ -7,7 +7,6 @@ import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Collapse from '@material-ui/core/Collapse'
-import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import { red } from '@material-ui/core/colors'
@@ -40,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function RecipeReviewCard () {
+export default function ItemCard () {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
