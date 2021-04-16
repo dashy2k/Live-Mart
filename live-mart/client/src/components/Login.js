@@ -12,6 +12,9 @@ import Grid from '@material-ui/core/Grid'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
+import Divider from '@material-ui/core/Divider'
+import { ReactComponent as GoogleLogo } from './icons/btn_google_dark_normal_ios.svg'
+import { ReactComponent as FacebookLogo } from './icons/facebook.svg'
 
 function Copyright () {
   return (
@@ -31,8 +34,7 @@ const useStyles = makeStyles(theme => ({
     height: '100vh'
   },
   image: {
-    backgroundImage:
-      'url(https://miro.medium.com/max/7914/0*rkDUK_3g6OhkCzX8)',
+    backgroundImage: 'url(https://miro.medium.com/max/7914/0*rkDUK_3g6OhkCzX8)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light'
@@ -57,8 +59,59 @@ const useStyles = makeStyles(theme => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
+  },
+  googleBtn: {
+    width: 400,
+    backgroundColor: '#4285F4',
+    height: 45,
+    borderRadius: 5
+  },
+  btnText: {
+    color: theme.palette.common.white,
+    textAlign: 'center',
+    padding: theme.spacing(1.5, 0, 2)
+  },
+  FBBtn: {
+    width: 400,
+    backgroundColor: '#4267b2',
+    height: 45,
+    borderRadius: 5
+  },
+  holder: {
+    padding: theme.spacing(1)
+  },
+  line : {
+    margin : theme.spacing(2,0,2)
+  },
+  container: {
+    display: "flex",
+    alignItems: "center"
+  },
+  border: {
+    borderBottom: "1px solid lightgray",
+    width: "100%"
+  },
+  content: {
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(0.5),
+    paddingRight: theme.spacing(2),
+    paddingLeft: theme.spacing(2),
+    fontWeight: 500,
+    fontSize: 22,
+    color: "lightgray"
   }
 }))
+
+const DividerWithText = ({ children }) => {
+  const classes = useStyles();
+  return (
+   <div className={classes.container}>
+     <div className={classes.border} />
+     <span className={classes.content}>{children}</span>
+     <div className={classes.border} />
+   </div>
+  );
+ };
 
 export default function Login () {
   const classes = useStyles()
@@ -111,7 +164,6 @@ export default function Login () {
             >
               Sign In
             </Button>
-            <Link href='http://localhost:5000/auth/google'>Sign in using Google</Link>
             <Grid container>
               <Grid item xs>
                 <Link href='#' variant='body2'>
@@ -123,6 +175,39 @@ export default function Login () {
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
+            </Grid>
+            <DividerWithText>OR</DividerWithText>
+            <Grid container justify='center'>
+              {/* <GoogleLoginButton onClick={() => alert("Hello")} /> */}
+              <Button href='http://localhost:5000/auth/google'>
+                <Grid
+                  container
+                  className={classes.googleBtn}
+                  style={{ textTransform: 'none' }}
+                >
+                  <Grid item>
+                    <GoogleLogo />
+                  </Grid>
+                  <Grid item className={classes.btnText} xs={10}>
+                    <Typography>Sign in with Google</Typography>
+                  </Grid>
+                </Grid>
+              </Button>
+              {/* <FacebookLoginButton onClick={() => alert("Hello")} /> */}
+              <Button href='http://localhost:5000/auth/facebook'>
+                <Grid
+                  container
+                  className={classes.FBBtn}
+                  style={{ textTransform: 'none' }}
+                >
+                  <Grid item className={classes.holder}>
+                    <FacebookLogo height={30} width={'auto'} />
+                  </Grid>
+                  <Grid item className={classes.btnText} xs={10}>
+                    <Typography>Sign in with Facebook</Typography>
+                  </Grid>
+                </Grid>
+              </Button>
             </Grid>
             <Box mt={5}>
               <Copyright />
