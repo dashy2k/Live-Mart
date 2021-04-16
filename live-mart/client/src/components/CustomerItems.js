@@ -3,7 +3,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import CategoryIcon from '@material-ui/icons/Category'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import HistoryIcon from '@material-ui/icons/History';
 import Collapse from '@material-ui/core/Collapse'
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
@@ -62,7 +62,7 @@ export default function CustomerItems() {
       </Collapse>
       <ListItem button>
         <ListItemIcon>
-          <ShoppingCartIcon />
+          <HistoryIcon />
         </ListItemIcon>
         <ListItemText primary='Your Orders' />
       </ListItem>

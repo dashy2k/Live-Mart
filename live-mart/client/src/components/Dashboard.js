@@ -226,6 +226,9 @@ export default function Dashboard () {
           <Link color='inherit' className={classes.authlink} href='/'>
             {'Sign In'}
           </Link>
+          <Link color='inherit' className={classes.authlink} href='userCheckout'>
+            {'Checkout'}
+          </Link>
           <IconButton color='inherit'>
             <Badge color='secondary'>
               <NotificationsIcon />

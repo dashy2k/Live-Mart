@@ -35,9 +35,6 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(1)
     }
   },
-  extendedIcon: {
-    marginRight: theme.spacing(1)
-  },
   inStock: {
     color: '#fff',
     backgroundColor: green[900]
@@ -66,14 +63,14 @@ export default function ItemDetails () {
     <div className={classes.root}>
       <Grid container direction='row' justify='center' alignItems='center'>
         <Grid item xs={12}>
-          <img width={600} src={onion} />
+          <img width={300} src={onion} alt='wow! Onion is Missing :P'/>
         </Grid>
         <Grid item xs={12}>
           <div className={classes.itemData}>
-            <Typography variant='h5'>Fresh Onions</Typography>
+            <Typography variant='h5'>Onions</Typography>
             <Divider />
             <Typography>Rs 28.00/Kg</Typography>
-            <ReactStars count={5} size={24} activeColor='#ffd700' />
+            <ReactStars count={5} size={40} activeColor='#ffd700' />
             <Chip
               className={classes.status}
               avatar={
@@ -110,7 +107,8 @@ export default function ItemDetails () {
             <Divider />
             <List component='nav' aria-label='secondary mailbox folders'>
               <ListItem button>
-                <ListItemText primary='Trash' />
+                <ListItemText primary='About' secondary='Onions are cultivated and used around the world. As a food item, they are usually served cooked, 
+                as a vegetable or part of a prepared savoury dish, but can also be eaten raw or used to make pickles or chutneys'/>
               </ListItem>
             </List>
             <div className={classes.floatButtons}>
