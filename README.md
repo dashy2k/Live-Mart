@@ -4,9 +4,9 @@
    ```node --version```
 2. To run both client and server(Make sure you are in the server directory)
    ```npm run dev```
-3. To run client only( cd to client)
-  ```npm run client```
-4. To run both server(cd to server)
+3. To run client only(sv dir/client dir)
+  ```npm run client OR npm run start```
+4. To run both server(sv dir)
    ```npm run sv```
    
  ## PORTS(dev mode)
