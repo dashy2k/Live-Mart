@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import { useHistory } from 'react-router-dom'
 import { fade, makeStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Drawer from '@material-ui/core/Drawer'
@@ -23,13 +24,16 @@ import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
 import ItemCard from './ItemCard'
 import ItemDetails from './ItemDetails'
+import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone'
+import ShoppingBasketTwoToneIcon from '@material-ui/icons/ShoppingBasketTwoTone'
+import userDp from './images/avatars/userDoge.jpg'
 
 function Copyright () {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
       <Link color='inherit' href='https://material-ui.com/'>
-        Your Website
+        Dogemart
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -123,8 +127,8 @@ const useStyles = makeStyles(theme => ({
   profileIcon: {
     color: theme.palette.getContrastText(deepOrange[500]),
     backgroundColor: deepOrange[500],
-    width: theme.spacing(4),
-    height: theme.spacing(4)
+    width: theme.spacing(8),
+    height: theme.spacing(8)
   },
   search: {
     position: 'relative',
@@ -163,19 +167,31 @@ const useStyles = makeStyles(theme => ({
       width: '20ch'
     }
   },
-  itemContainer : {
-    padding : theme.spacing(2)
+  itemContainer: {
+    padding: theme.spacing(2)
   }
 }))
 
 export default function Dashboard () {
+  let history = useHistory()
+
   const classes = useStyles()
+
   const [open, setOpen] = React.useState(true)
+
   const handleDrawerOpen = () => {
     setOpen(true)
   }
   const handleDrawerClose = () => {
     setOpen(false)
+  }
+
+  const checkoutToCart = () => {
+    history.push('/checkout')
+  }
+
+  const handleLogout = () => {
+    history.push('/logout')
   }
 
   return (
@@ -226,28 +242,38 @@ export default function Dashboard () {
           <Link color='inherit' className={classes.authlink} href='/'>
             {'Sign In'}
           </Link>
-          <Link color='inherit' className={classes.authlink} href='userCheckout'>
-            {'Checkout'}
-          </Link>
+          <IconButton color='inherit' onClick={checkoutToCart}>
+            <Badge color='secondary'>
+              <ShoppingBasketTwoToneIcon />
+            </Badge>
+          </IconButton>
           <IconButton color='inherit'>
             <Badge color='secondary'>
               <NotificationsIcon />
             </Badge>
           </IconButton>
+          <IconButton color='inherit'>
+            <Badge color='secondary'>
+              <ExitToAppTwoToneIcon />
+            </Badge>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
-      variant="persistent"
+        variant='persistent'
         classes={{
           paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose)
         }}
         open={open}
       >
         <div className={classes.toolbarIcon}>
-        <Grid container justify='flex-start'>
-        <IconButton>
-            <Avatar className={classes.profileIcon}>A</Avatar>
-          </IconButton>
+          <Grid container justify='center'>
+            <IconButton>
+              <Avatar className={classes.profileIcon} src={userDp}>A</Avatar>
+            </IconButton>
+            <Typography color='textSecondary' display='block'>
+              Welcome, Lil Vro
+            </Typography>
           </Grid>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
@@ -263,7 +289,7 @@ export default function Dashboard () {
         <Grid container className={classes.itemContainer}>
           <Grid container spacing={2}>
             <Grid item xs={4} sm={2}>
-              <ItemCard/>
+              <ItemCard />
               <ItemCard />
             </Grid>
             <Grid item xs={4} sm={2}>

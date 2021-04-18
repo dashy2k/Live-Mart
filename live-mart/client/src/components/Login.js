@@ -157,7 +157,7 @@ export default function Login () {
             <Button
               type='submit'
               fullWidth
-              href='/userDashboard'
+              href='/dashboard'
               variant='contained'
               color='primary'
               className={classes.submit}

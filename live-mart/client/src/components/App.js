@@ -11,8 +11,8 @@ export default function App () {
       <div>
         <Route exact path='/' component={Login} />
         <Route path='/signup' component={SignUp} />
-        <Route path='/userDashboard' component={Dashboard} />
-        <Route path='/userCheckout' component={Checkout}/>
+        <Route path='/dashboard' component={Dashboard} />
+        <Route path='/checkout' component={Checkout}/>
       </div>
     </BrowserRouter>
   )
