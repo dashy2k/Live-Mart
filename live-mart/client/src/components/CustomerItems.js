@@ -35,11 +35,11 @@ export default function CustomerItems() {
         <ListItemIcon>
           <CategoryIcon />
         </ListItemIcon>
-        <ListItemText primary='Categories' />
+        <ListItemText primary='Categories'  secondary='Shopping'/>
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout='auto' unmountOnExit>
-        <List component='div' disablePadding>
+        <List component='div' disablePadding >
           <ListItem button className={classes.nested}>
             <ListItemText secondary='Fruits & Vegetables' />
           </ListItem>

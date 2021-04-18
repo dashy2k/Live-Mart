@@ -9,6 +9,7 @@ import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import ShoppingCart from './ShoppingCart'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,6 +27,12 @@ const useStyles = makeStyles(theme => ({
   },
   cart : {
       margin : theme.spacing(6,0,0)
+  },
+  icon : {
+    width : 40,
+    height : 'auto',
+    margin : theme.spacing(0,4,0),
+    color : '#ff5733'
   }
 }))
 
@@ -47,7 +54,7 @@ function ShoppingCartItems () {
     <div className={classes.MainBox}>
       <Grid container justify='center'>
         <Grid item xs={12} sm={6}>
-          <Typography variant='h5'>Your Cart</Typography>
+          <Typography variant='h6'>Your Cart<ShoppingBasketIcon className={classes.icon}/></Typography>
           <Grid container justify='flex-end' className={classes.MainBox}><Button
           href = '/userDashboard'
         variant="contained"

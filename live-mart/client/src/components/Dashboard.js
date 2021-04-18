@@ -254,14 +254,14 @@ export default function Dashboard () {
         <Divider />
         <CustomerItems />
         <Divider />
-        {<RetailerItems />}
+        <RetailerItems />
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Grid container className={classes.itemContainer}>
           <Grid container spacing={2}>
             <Grid item xs={4} sm={2}>
-              <ItemCard />
+              <ItemCard/>
               <ItemCard />
             </Grid>
             <Grid item xs={4} sm={2}>
