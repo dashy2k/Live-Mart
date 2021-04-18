@@ -3,9 +3,9 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import PeopleIcon from '@material-ui/icons/People'
+import DashboardIcon from '@material-ui/icons/Dashboard'
 import { makeStyles } from '@material-ui/core/styles'
-
+import ListSubheader from '@material-ui/core/ListSubheader'
 
 export default function ReatailerItems () {
   const useStyles = makeStyles(theme => ({
@@ -20,12 +20,18 @@ export default function ReatailerItems () {
   }))
 
   return (
-    <List>
+    <List
+      subheader={
+        <ListSubheader component='div' id='nested-list-subheader'>
+          Retailer Controls
+        </ListSubheader>
+      }
+    >
       <ListItem button>
         <ListItemIcon>
-          <PeopleIcon />
+          <DashboardIcon />
         </ListItemIcon>
-        <ListItemText primary='Customers' />
+        <ListItemText primary='Dashboard' />
       </ListItem>
     </List>
   )
