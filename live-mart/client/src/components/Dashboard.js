@@ -234,19 +234,21 @@ export default function Dashboard () {
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <IconButton>
-            <Avatar className={classes.profileIcon}>A</Avatar>
-          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
-        variant='permanent'
+      variant="persistent"
         classes={{
           paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose)
         }}
         open={open}
       >
         <div className={classes.toolbarIcon}>
+        <Grid container justify='flex-start'>
+        <IconButton>
+            <Avatar className={classes.profileIcon}>A</Avatar>
+          </IconButton>
+          </Grid>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
