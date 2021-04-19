@@ -28,8 +28,9 @@ import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone'
 import ShoppingBasketTwoToneIcon from '@material-ui/icons/ShoppingBasketTwoTone'
 import userDp from './images/avatars/userDoge.jpg'
 import axios from 'axios'
+import Items from './data/items.json'
 
-function Copyright () {
+function Copyright() {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
@@ -172,8 +173,27 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2)
   }
 }))
+function addItemCard(itemCard) {
 
-export default function Dashboard () {
+  const { id, name, img_src, description, price, category } = itemCard
+  console.log(id + name + img_src);
+  return (
+    <Grid item xs={4}>
+      <ItemCard
+        key={id}
+        name={name}
+        img={img_src}
+        description={description}
+        price={price}
+        category={category}
+      />
+    </Grid>
+
+  )
+
+}
+
+export default function Dashboard() {
   let history = useHistory()
 
   const classes = useStyles()
@@ -303,18 +323,18 @@ export default function Dashboard () {
         <div className={classes.appBarSpacer} />
         <Grid container className={classes.itemContainer}>
           <Grid container spacing={2}>
-            <Grid item xs={4} sm={2}>
+
+            <Grid item xs={12} sm={8} >
+              {Items.map(addItemCard)}
+            </Grid>
+            {/* <Grid item xs={4} sm={2}>
               <ItemCard />
               <ItemCard />
             </Grid>
             <Grid item xs={4} sm={2}>
               <ItemCard />
               <ItemCard />
-            </Grid>
-            <Grid item xs={4} sm={2}>
-              <ItemCard />
-              <ItemCard />
-            </Grid>
+            </Grid> */}
             <Grid xs={6} sm={4} spacing={4}>
               <ItemDetails />
             </Grid>
