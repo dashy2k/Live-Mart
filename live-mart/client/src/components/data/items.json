@@ -2,106 +2,135 @@
     {
         "id": 0,
         "name": "Onion",
-        "img_src": "./images/items/onion.jpg",
+        "img_src": "https://s3.india.com/wp-content/uploads/2020/08/red-onion.jpg",
         "description": " Kaanda-chan vemry tamsty",
         "price": 35,
-        "category" : "Vegetables and Fruits"
+        "category" : "Fruits & Vegetables"
 
     },
     {
         "id": 1,
         "name": "Apple",
-        "img_src": "./images/items/apple.jpg",
+        "img_src": "https://static.libertyprim.com/files/familles/pomme-large.jpg?1569271834",
         "description": "Doctor bhagane ki ninja technique",
         "price": 35,
-        "category" : "Vegetables and Fruits"
+        "category" : "Fruits & Vegetables"
 
     },
     {
         "id": 2,
         "name": "Potato",
-        "img_src": "./images/items/potato.jpg",
+        "img_src": "https://www.jiomart.com/images/product/600x600/590003516/potato-per-kg-0-20200710.jpg",
         "description": "Yummpies french fry khaane ka mann hai",
         "price": 20,
-        "category" : "Vegetables and Fruits"
+        "category" : "Fruits & Vegetables"
     },
     {
         "id": 3,
         "name": "Mango",
-        "img_src": "./images/items/mango.jpg",
+        "img_src": "https://plantogram.com/wa-data/public/shop/products/55/06/655/images/1256/1256.750@2x.jpg",
         "description": "Peele Raseele Aam",
         "price": 50,
-        "category" : "Vegetables and Fruits"
+        "category" : "Fruits & Vegetables"
     },
     {
         "id": 4,
-        "name": "Lady's Finger",
-        "img_src": "./images/items/ladys_finger.jpg",
+        "name": "Lady Finger",
+        "img_src": "https://4.imimg.com/data4/RP/LP/IMOB-36748430/img_20170406_170825-500x500.jpg",
         "description": "Aisa naam kaun rakhta hai sabzi ka",
         "price": 2,
-        "category" : "Vegetables and Fruits"
+        "category" : "Fruits & Vegetables"
     },
     {
         "id": 5,
         "name": "Litchi",
-        "img_src": "./images/items/litchi.jpg",
+        "img_src": "https://5.imimg.com/data5/AB/ER/MY-8583111/lichies-500x500.png",
         "description": "Underrated fruit",
         "price": 20,
-        "category" : "Vegetables and Fruits"
+        "category" : "Fruits & Vegetables"
     },
 
     {
         "id": 6,
         "name": "Saffola Gold",
-        "img_src": "./images/items/safola_gold.jpg",
+        "img_src": "https://images-na.ssl-images-amazon.com/images/I/61KqD6xBtoL._SL1500_.jpg",
         "description": "Heamlthy Oil",
         "price": 140,
-        "category" : "Foodgrains, Oils and Masala"
+        "category" : "Foodgrains,Oils & Masala"
 
     },
     {
         "id": 7,
         "name": "Toor Dal",
-        "img_src": "./images/items/toor_dal.jpg",
+        "img_src": "https://5.imimg.com/data5/HQ/KR/MY-5477230/toor-dal-500x500.jpg",
         "description": "Yellow dal",
         "price": 40,
-        "category" : "Foodgrains, Oils and Masala"
+        "category" : "Foodgrains,Oils & Masala"
+
 
     },
     {
         "id": 8,
         "name": "Garam Masala",
-        "img_src": "./images/items/garam_masala.jpg",
+        "img_src": "https://5.imimg.com/data5/SV/PM/MY-35858390/roasted-garam-masala-500x500.jpg",
         "description": "Bemst Spice Blend",
         "price": 100,
-        "category" : "Foodgrains, Oils and Masala"
+        "category" : "Foodgrains,Oils & Masala"
+
 
     },
     {
         "id": 9,
         "name": "Fortune Refined",
-        "img_src": "./images/items/fortune_refined.jpg",
+        "img_src": "https://choosemychoice.com/wp-content/uploads/2020/05/274148_11-fortune-sunflower-refined-oil.jpg",
         "description": "Also heamlthy oil",
         "price": 130,
-        "category" : "Foodgrains, Oils and Masala"
+        "category" : "Foodgrains,Oils & Masala"
+
 
     },
     {
         "id": 10,
         "name": "Masoor Dal",
-        "img_src": "./images/items/masoor_dal.jpg",
+        "img_src": "https://images-na.ssl-images-amazon.com/images/I/614JpSxmkbL._SX679_.jpg",
         "description": "Red dal",
         "price": 140,
-        "category" : "Foodgrains, Oils and Masala"
+        "category" : "Foodgrains,Oils & Masala"
+
 
     },
     {
         "id": 11,
-        "name": "Saffola Gold Cooking Oil",
-        "img_src": "./images/items/safola.jpg",
+        "name": "Bread",
+        "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNy-6y9Z8Wh22cpBCWPbWVWKRC0QLuWE3ufg&usqp=CAU",
         "description": "Heamlthy Oil",
         "price": 140,
-        "category" : "Foodgrains, Oils and Masala"
+        "category" : "Bakery,Cakes & Dairy"
 
     },
+    {
+        "id": 12,
+        "name": "Veg Puff",
+        "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPEW1JY5RAywsO8ey562LaC5DnwK-Q_1HwoA&usqp=CAU",
+        "description": "Heamlthy Oil",
+        "price": 140,
+        "category" : "Bakery,Cakes & Dairy"
+
+    },
+    {
+        "id": 13,
+        "name": "Bread",
+        "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNy-6y9Z8Wh22cpBCWPbWVWKRC0QLuWE3ufg&usqp=CAU",
+        "description": "Heamlthy Oil",
+        "price": 140,
+        "category": "Bakery,Cakes & Dairy"
+    },
+    {
+        "id": 14,
+        "name": "Bread",
+        "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNy-6y9Z8Wh22cpBCWPbWVWKRC0QLuWE3ufg&usqp=CAU",
+        "description": "Heamlthy Oil",
+        "price": 140,
+        "category": "Bakery,Cakes & Dairy"
+    }
 ]

@@ -30,7 +30,7 @@ import userDp from './images/avatars/userDoge.jpg'
 import axios from 'axios'
 import Items from './data/items.json'
 
-function Copyright() {
+function Copyright () {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
@@ -173,32 +173,29 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2)
   }
 }))
-function addItemCard(itemCard) {
-
+function addItemCard (itemCard) {
   const { id, name, img_src, description, price, category } = itemCard
-  console.log(id + name + img_src);
+  console.log(id + name + img_src)
   return (
-    <Grid item xs={4}>
-      <ItemCard
-        key={id}
-        name={name}
-        img={img_src}
-        description={description}
-        price={price}
-        category={category}
-      />
-    </Grid>
-
+    <ItemCard
+      key={id}
+      name={name}
+      img={img_src}
+      description={description}
+      price={price}
+      category={category}
+    />
   )
-
 }
 
-export default function Dashboard() {
+export default function Dashboard () {
   let history = useHistory()
 
   const classes = useStyles()
 
   const [open, setOpen] = React.useState(true)
+  const [currentUser, setCurrentUser] = React.useState('')
+  const [choosenCategory, setChoosenCategory] = React.useState('')
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -215,7 +212,9 @@ export default function Dashboard() {
     history.push('/logout')
   }
 
-  const [currentUser, setCurrentUser] = React.useState('')
+  const handleCategory=()=>{
+    
+  }
 
   useEffect(() => {
     // GET request using axios inside useEffect React hook
@@ -322,22 +321,11 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Grid container className={classes.itemContainer}>
-          <Grid container spacing={2}>
-
-            <Grid item xs={12} sm={8} >
-              {Items.map(addItemCard)}
-            </Grid>
-            {/* <Grid item xs={4} sm={2}>
-              <ItemCard />
-              <ItemCard />
-            </Grid>
-            <Grid item xs={4} sm={2}>
-              <ItemCard />
-              <ItemCard />
-            </Grid> */}
-            <Grid xs={6} sm={4} spacing={4}>
-              <ItemDetails />
-            </Grid>
+          <Grid container xs={6}>
+            {Items.map(addItemCard)}
+          </Grid>
+          <Grid container xs={6}>
+            <ItemDetails />
           </Grid>
           <Box pt={4}>
             <Copyright />

@@ -29,6 +29,13 @@ export default function CustomerItems() {
     setOpen(!open)
   }
 
+  const [choosenCategory, setChoosenCategory] = React.useState('')
+
+  const handleCategory = (event) => {
+    setChoosenCategory(event.target.secondary)
+    console.log(event.target.value)
+  }
+
   return (
     <List>
       <ListItem button onClick={handleClick}>
@@ -40,22 +47,22 @@ export default function CustomerItems() {
       </ListItem>
       <Collapse in={open} timeout='auto' unmountOnExit>
         <List component='div' disablePadding >
-          <ListItem button className={classes.nested}>
+          <ListItem button className={classes.nested}  onClick={handleCategory} value='Fruits & Vegetables'>
             <ListItemText secondary='Fruits & Vegetables' />
           </ListItem>
-          <ListItem button className={classes.nested}>
+          <ListItem button className={classes.nested} onClick={handleCategory} id='Fruits & Vegetables'>
             <ListItemText secondary='Foodgrains,Oils & Masala' />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemText secondary='Bakey,Cakes & Dairy' />
+          <ListItem button className={classes.nested} onClick={handleCategory} id='Fruits & Vegetables'>
+            <ListItemText secondary='Bakery,Cakes & Dairy' />
           </ListItem>
-          <ListItem button className={classes.nested}>
+          <ListItem button className={classes.nested} onClick={handleCategory}>
             <ListItemText secondary='Beverages'/>
           </ListItem>
-          <ListItem button className={classes.nested}>
+          <ListItem button className={classes.nested} onClick={handleCategory}>
             <ListItemText secondary='Snack & Branded Food' />
           </ListItem>
-          <ListItem button className={classes.nested}>
+          <ListItem button className={classes.nested} onClick={handleCategory}>
             <ListItemText secondary='Eggs,Meat & Fish' />
           </ListItem>
         </List>
@@ -64,7 +71,7 @@ export default function CustomerItems() {
         <ListItemIcon>
           <HistoryIcon />
         </ListItemIcon>
-        <ListItemText primary='Your Orders' />
+        <ListItemText primary='Your Previous Orders' />
       </ListItem>
     </List>
   )

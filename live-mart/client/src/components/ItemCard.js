@@ -18,7 +18,8 @@ import img from './images/cards/onion.jpg'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 345
+    maxWidth: 230,
+    margin : theme.spacing(2)
   },
   media: {
     height: 0,
@@ -39,14 +40,14 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function ItemCard(props) {
+export default function ItemCard (props) {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
   const handleExpandClick = () => {
     setExpanded(!expanded)
   }
-
+  console.log(props.img)
   return (
     <Card key={props.id} className={classes.root}>
       <CardHeader
@@ -58,7 +59,11 @@ export default function ItemCard(props) {
         title={props.name}
         subheader='September 14, 2016'
       />
-      <CardMedia className={classes.media} image={props.img} title={props.name} />
+      <CardMedia
+        className={classes.media}
+        image={props.img}
+        title={props.name}
+      />
       <CardContent>
         <Typography variant='body2' color='textSecondary' component='p'>
           {props.description}
@@ -71,26 +76,7 @@ export default function ItemCard(props) {
         <IconButton aria-label='share'>
           <ShareIcon />
         </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label='show more'
-        >
-          <ExpandMoreIcon />
-        </IconButton>
       </CardActions>
-      <Collapse in={expanded} timeout='auto' unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-            set aside for 10 minutes.
-          </Typography>
-        </CardContent>
-      </Collapse>
     </Card>
   )
 }
