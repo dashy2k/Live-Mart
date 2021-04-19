@@ -3,134 +3,256 @@
         "id": 0,
         "name": "Onion",
         "img_src": "https://s3.india.com/wp-content/uploads/2020/08/red-onion.jpg",
-        "description": " Kaanda-chan vemry tamsty",
+        "description": "Fruits & Vegetables",
         "price": 35,
-        "category" : "Fruits & Vegetables"
-
+        "category": "Fruits & Vegetables"
     },
     {
         "id": 1,
         "name": "Apple",
         "img_src": "https://static.libertyprim.com/files/familles/pomme-large.jpg?1569271834",
-        "description": "Doctor bhagane ki ninja technique",
+        "description": "Fruits & Vegetables",
         "price": 35,
-        "category" : "Fruits & Vegetables"
-
+        "category": "Fruits & Vegetables"
     },
     {
         "id": 2,
         "name": "Potato",
         "img_src": "https://www.jiomart.com/images/product/600x600/590003516/potato-per-kg-0-20200710.jpg",
-        "description": "Yummpies french fry khaane ka mann hai",
+        "description": "Fruits & Vegetables",
         "price": 20,
-        "category" : "Fruits & Vegetables"
+        "category": "Fruits & Vegetables"
     },
     {
         "id": 3,
         "name": "Mango",
         "img_src": "https://plantogram.com/wa-data/public/shop/products/55/06/655/images/1256/1256.750@2x.jpg",
-        "description": "Peele Raseele Aam",
+        "description": "Fruits & Vegetables",
         "price": 50,
-        "category" : "Fruits & Vegetables"
+        "category": "Fruits & Vegetables"
     },
     {
         "id": 4,
         "name": "Lady Finger",
         "img_src": "https://4.imimg.com/data4/RP/LP/IMOB-36748430/img_20170406_170825-500x500.jpg",
-        "description": "Aisa naam kaun rakhta hai sabzi ka",
+        "description": "Fruits & Vegetables",
         "price": 2,
-        "category" : "Fruits & Vegetables"
+        "category": "Fruits & Vegetables"
     },
     {
         "id": 5,
         "name": "Litchi",
         "img_src": "https://5.imimg.com/data5/AB/ER/MY-8583111/lichies-500x500.png",
-        "description": "Underrated fruit",
+        "description": "Fruits & Vegetables",
         "price": 20,
-        "category" : "Fruits & Vegetables"
+        "category": "Fruits & Vegetables"
     },
-
     {
         "id": 6,
         "name": "Saffola Gold",
         "img_src": "https://images-na.ssl-images-amazon.com/images/I/61KqD6xBtoL._SL1500_.jpg",
-        "description": "Heamlthy Oil",
+        "description": "Foodgrains,Oils & Masala",
         "price": 140,
-        "category" : "Foodgrains,Oils & Masala"
-
+        "category": "Foodgrains,Oils & Masala"
     },
     {
         "id": 7,
         "name": "Toor Dal",
         "img_src": "https://5.imimg.com/data5/HQ/KR/MY-5477230/toor-dal-500x500.jpg",
-        "description": "Yellow dal",
+        "description": "Foodgrains,Oils & Masala",
         "price": 40,
-        "category" : "Foodgrains,Oils & Masala"
-
-
+        "category": "Foodgrains,Oils & Masala"
     },
     {
         "id": 8,
         "name": "Garam Masala",
         "img_src": "https://5.imimg.com/data5/SV/PM/MY-35858390/roasted-garam-masala-500x500.jpg",
-        "description": "Bemst Spice Blend",
+        "description": "Foodgrains,Oils & Masala",
         "price": 100,
-        "category" : "Foodgrains,Oils & Masala"
-
-
+        "category": "Foodgrains,Oils & Masala"
     },
     {
         "id": 9,
         "name": "Fortune Refined",
         "img_src": "https://choosemychoice.com/wp-content/uploads/2020/05/274148_11-fortune-sunflower-refined-oil.jpg",
-        "description": "Also heamlthy oil",
+        "description": "Foodgrains,Oils & Masala",
         "price": 130,
-        "category" : "Foodgrains,Oils & Masala"
-
-
+        "category": "Foodgrains,Oils & Masala"
     },
     {
         "id": 10,
         "name": "Masoor Dal",
         "img_src": "https://images-na.ssl-images-amazon.com/images/I/614JpSxmkbL._SX679_.jpg",
-        "description": "Red dal",
+        "description": "Foodgrains,Oils & Masala",
         "price": 140,
-        "category" : "Foodgrains,Oils & Masala"
-
-
+        "category": "Foodgrains,Oils & Masala"
     },
     {
         "id": 11,
         "name": "Bread",
         "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNy-6y9Z8Wh22cpBCWPbWVWKRC0QLuWE3ufg&usqp=CAU",
-        "description": "Heamlthy Oil",
+        "description": "Bakery,Cakes & Dairy",
         "price": 140,
-        "category" : "Bakery,Cakes & Dairy"
-
+        "category": "Bakery,Cakes & Dairy"
     },
     {
         "id": 12,
         "name": "Veg Puff",
         "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPEW1JY5RAywsO8ey562LaC5DnwK-Q_1HwoA&usqp=CAU",
-        "description": "Heamlthy Oil",
+        "description": "Bakery,Cakes & Dairy",
         "price": 140,
-        "category" : "Bakery,Cakes & Dairy"
-
+        "category": "Bakery,Cakes & Dairy"
     },
     {
         "id": 13,
-        "name": "Bread",
-        "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNy-6y9Z8Wh22cpBCWPbWVWKRC0QLuWE3ufg&usqp=CAU",
-        "description": "Heamlthy Oil",
+        "name": "Amul Milk",
+        "img_src": "https://www.bigbasket.com/media/uploads/p/l/70001832_2-amul-taaza-fresh-toned-milk.jpg",
+        "description": "Bakery,Cakes & Dairy",
         "price": 140,
         "category": "Bakery,Cakes & Dairy"
     },
     {
         "id": 14,
-        "name": "Bread",
-        "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNy-6y9Z8Wh22cpBCWPbWVWKRC0QLuWE3ufg&usqp=CAU",
-        "description": "Heamlthy Oil",
+        "name": "Veg Burger",
+        "img_src": "https://i.ytimg.com/vi/dCVEY88Fn1k/maxresdefault.jpg",
+        "description": "Bakery,Cakes & Dairy",
         "price": 140,
         "category": "Bakery,Cakes & Dairy"
+    },
+    {
+        "id": 15,
+        "name": "Amul Butter",
+        "img_src": "https://www.jiomart.com/images/product/600x600/490001392/amul-butter-500-g-carton-6-20210315.jpg",
+        "description": "Bakery,Cakes & Dairy",
+        "price": 140,
+        "category": "Bakery,Cakes & Dairy"
+    },
+    {
+        "id": 16,
+        "name": "Pineapple Cake",
+        "img_src": "https://cdn.igp.com/f_auto,q_auto,t_prodm/products/p-classic-pineapple-cake-2-kg--6120-m.jpg",
+        "description": "Bakery,Cakes & Dairy",
+        "price": 140,
+        "category": "Bakery,Cakes & Dairy"
+    },
+    {
+        "id": 17,
+        "name": "B Natural- Guava",
+        "img_src": "https://cdn.shopify.com/s/files/1/0173/7644/4470/products/DakshinGuava_750ML_BB_3DFOP_483632f1-2f28-4d7e-a8ad-238c4ec771f1_1024x1024.jpg?v=1607627555",
+        "description": "Beverages",
+        "price": 140,
+        "category": "Beverages"
+    },
+    {
+        "id": 18,
+        "name": "Amul Lassi",
+        "img_src": "https://www.bigbasket.com/media/uploads/p/l/40026295-2_1-amul-lassi.jpg",
+        "description": "Beverages",
+        "price": 140,
+        "category": "Beverages"
+    },
+    {
+        "id": 19,
+        "name": "Amul Kool",
+        "img_src": "https://www.bigbasket.com/media/uploads/p/xxl/40005022_4-amul-kool-kesar.jpg",
+        "description": "Beverages",
+        "price": 140,
+        "category": "Beverages"
+    },
+    {
+        "id": 20,
+        "name": "Amul Kool Cafe",
+        "img_src": "https://images-na.ssl-images-amazon.com/images/I/61lXxMP05YL._SL1000_.jpg",
+        "description": "Beverages",
+        "price": 140,
+        "category": "Beverages"
+    },
+    {
+        "id": 21,
+        "name": "Winkin Cow Vanilla Thick Shakes",
+        "img_src": "https://www.bigbasket.com/media/uploads/p/l/40165623-2_4-britannia-winkin-cow-vanillicious-thick-milkshake.jpg",
+        "description": "Beverages",
+        "price": 140,
+        "category": "Beverages"
+    },
+    {
+        "id": 22,
+        "name": "Lays",
+        "img_src": "https://images-na.ssl-images-amazon.com/images/I/51LBZ%2BqRWmL.jpg",
+        "description": "Snack & Branded Food",
+        "price": 140,
+        "category": "Snack & Branded Food"
+    },
+    {
+        "id": 23,
+        "name": "Uncle Chips",
+        "img_src": "https://images-na.ssl-images-amazon.com/images/I/71yFd%2Bv2ddL._SL1500_.jpg",
+        "description": "Snack & Branded Food",
+        "price": 140,
+        "category": "Snack & Branded Food"
+    },
+    {
+        "id": 24,
+        "name": "Doritos",
+        "img_src": "https://storage.googleapis.com/shop-seo-firestore.appspot.com/gdb/doritos-sweet-chilli-tortilla-chips-25-g_1586912411.jpg",
+        "description": "Snack & Branded Food",
+        "price": 140,
+        "category": "Snack & Branded Food"
+    },
+    {
+        "id": 25,
+        "name": "Cornitos",
+        "img_src": "https://images-na.ssl-images-amazon.com/images/I/71ZF4s0Go7L._SL1500_.jpg",
+        "description": "Snack & Branded Food",
+        "price": 140,
+        "category": "Snack & Branded Food"
+    },
+    {
+        "id": 26,
+        "name": "Kurkure",
+        "img_src": "https://neareshop.s3.ap-south-1.amazonaws.com/2020/05/Kurkure-Masala-Munch-Bridges-25-g.jpg",
+        "description": "Snack & Branded Food",
+        "price": 140,
+        "category": "Snack & Branded Food"
+    },
+    {
+        "id": 27,
+        "name": "Eggs",
+        "img_src": "https://solidstarts.com/wp-content/uploads/when-can-babies-eat-eggs.jpg",
+        "description": "Eggs,Meat & Fish",
+        "price": 140,
+        "category": "Eggs,Meat & Fish"
+    },
+    {
+        "id": 28,
+        "name": "Chicken",
+        "img_src": "https://5.imimg.com/data5/GJ/RX/BX/SELLER-27331413/boiler-chicken-meat-500x500.jpg",
+        "description": "Eggs,Meat & Fish",
+        "price": 140,
+        "category": "Eggs,Meat & Fish"
+    },
+    {
+        "id": 29,
+        "name": "Fish",
+        "img_src": "https://previews.123rf.com/images/astockstudio/astockstudio1905/astockstudio190500020/124686341-close-up-two-pieces-of-fresh-fish-meat-salmon-on-a-wooden-board-on-a-white-background-.jpg",
+        "description": "Eggs,Meat & Fish",
+        "price": 140,
+        "category": "Eggs,Meat & Fish"
+    },
+    {
+        "id": 30,
+        "name": "Mutton",
+        "img_src": "https://4.imimg.com/data4/AE/QM/MY-29524681/mutton-meat-500x500.jpg",
+        "description": "Eggs,Meat & Fish",
+        "price": 140,
+        "category": "Eggs,Meat & Fish"
+    },
+    {
+        "id": 31,
+        "name": "Pork",
+        "img_src": "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/globalmeatnews.com/article/2018/10/26/us-lifts-ban-on-polish-pork-meat-imports/8768399-1-eng-GB/US-lifts-ban-on-Polish-pork-meat-imports_wrbm_large.jpg",
+        "description": "Eggs,Meat & Fish",
+        "price": 140,
+        "category": "Eggs,Meat & Fish"
     }
 ]
