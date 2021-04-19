@@ -335,7 +335,7 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Grid container className={classes.itemContainer}>
           <Grid container xs={6}>
-            {changeItemCard && Items.map(addItemCard)}
+            {changeItemCard ? Items.map(addItemCard) : Items.map(addItemCard)}
           </Grid>
           <Grid container xs={6}>
             <ItemDetails />
