@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function ItemCard () {
+export default function ItemCard(props) {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
@@ -48,22 +48,20 @@ export default function ItemCard () {
   }
 
   return (
-    <Card className={classes.root}>
+    <Card key={props.id} className={classes.root}>
       <CardHeader
         action={
           <IconButton aria-label='settings'>
             <MoreVertIcon />
           </IconButton>
         }
-        title='Onion'
+        title={props.name}
         subheader='September 14, 2016'
       />
-      <CardMedia className={classes.media} image={img} title='Paella dish' />
+      <CardMedia className={classes.media} image={props.img} title={props.name} />
       <CardContent>
         <Typography variant='body2' color='textSecondary' component='p'>
-          The onion, also known as the bulb onion or common onion, is a
-          vegetable that is the most widely cultivated species of the genus
-          Allium
+          {props.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
