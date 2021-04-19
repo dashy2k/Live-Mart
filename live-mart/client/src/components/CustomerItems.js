@@ -10,7 +10,9 @@ import ExpandMore from '@material-ui/icons/ExpandMore'
 import List from '@material-ui/core/List'
 import { makeStyles } from '@material-ui/core/styles'
 
-export default function CustomerItems() {
+
+
+export default function CustomerItems(props) {
 
   const useStyles = makeStyles(theme => ({
     root: {
@@ -29,40 +31,34 @@ export default function CustomerItems() {
     setOpen(!open)
   }
 
-  const [choosenCategory, setChoosenCategory] = React.useState('')
-
-  const handleCategory = (event) => {
-    setChoosenCategory(event.target.secondary)
-    console.log(event.target.value)
-  }
-
+  
   return (
     <List>
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
           <CategoryIcon />
         </ListItemIcon>
-        <ListItemText primary='Categories'  secondary='Shopping'/>
+        <ListItemText primary='Categories' secondary='Shopping' />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout='auto' unmountOnExit>
         <List component='div' disablePadding >
-          <ListItem button className={classes.nested}  onClick={handleCategory} value='Fruits & Vegetables'>
+          <ListItem button className={classes.nested} onClick={props.handleCategory} value='Fruits & Vegetables'>
             <ListItemText secondary='Fruits & Vegetables' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={handleCategory} id='Fruits & Vegetables'>
+          <ListItem button className={classes.nested} onClick={props.handleCategory} id='Fruits & Vegetables'>
             <ListItemText secondary='Foodgrains,Oils & Masala' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={handleCategory} id='Fruits & Vegetables'>
+          <ListItem button className={classes.nested} onClick={props.handleCategory} id='Fruits & Vegetables'>
             <ListItemText secondary='Bakery,Cakes & Dairy' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={handleCategory}>
-            <ListItemText secondary='Beverages'/>
+          <ListItem button className={classes.nested} onClick={props.handleCategory}>
+            <ListItemText secondary='Beverages' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={handleCategory}>
+          <ListItem button className={classes.nested} onClick={props.handleCategory}>
             <ListItemText secondary='Snack & Branded Food' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={handleCategory}>
+          <ListItem button className={classes.nested} onClick={props.handleCategory}>
             <ListItemText secondary='Eggs,Meat & Fish' />
           </ListItem>
         </List>
@@ -75,6 +71,6 @@ export default function CustomerItems() {
       </ListItem>
     </List>
   )
-  
+
 }
 
