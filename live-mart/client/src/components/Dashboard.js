@@ -30,7 +30,7 @@ import userDp from './images/avatars/userDoge.jpg'
 import axios from 'axios'
 import Items from './data/items.json'
 
-function Copyright () {
+function Copyright() {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
@@ -173,29 +173,39 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2)
   }
 }))
-function addItemCard (itemCard) {
+
+var currentCategory = 'Fruits & Vegetables';
+
+function addItemCard(itemCard) {
   const { id, name, img_src, description, price, category } = itemCard
-  console.log(id + name + img_src)
-  return (
-    <ItemCard
-      key={id}
-      name={name}
-      img={img_src}
-      description={description}
-      price={price}
-      category={category}
-    />
-  )
+  if (category === currentCategory) {
+    
+    return (
+      <ItemCard
+        key={id}
+        name={name}
+        img={img_src}
+        description={description}
+        price={price}
+        category={category}
+      />
+    )
+  } else {
+    return null;
+  }
 }
 
-export default function Dashboard () {
+
+export default function Dashboard() {
   let history = useHistory()
 
   const classes = useStyles()
 
   const [open, setOpen] = React.useState(true)
   const [currentUser, setCurrentUser] = React.useState('')
-  const [choosenCategory, setChoosenCategory] = React.useState('')
+  const [changeItemCard, setChangeItemCard] = React.useState(true)
+
+
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -212,9 +222,12 @@ export default function Dashboard () {
     history.push('/logout')
   }
 
-  const handleCategory=()=>{
-    
+  const handleCategory = (event) => {
+    console.log('Button Pressed');
+    currentCategory = event.target.textContent;
+    setChangeItemCard(!changeItemCard);
   }
+
 
   useEffect(() => {
     // GET request using axios inside useEffect React hook
@@ -314,7 +327,7 @@ export default function Dashboard () {
           </IconButton>
         </div>
         <Divider />
-        <CustomerItems />
+        <CustomerItems handleCategory={handleCategory} />
         <Divider />
         <RetailerItems />
       </Drawer>
@@ -322,7 +335,7 @@ export default function Dashboard () {
         <div className={classes.appBarSpacer} />
         <Grid container className={classes.itemContainer}>
           <Grid container xs={6}>
-            {Items.map(addItemCard)}
+            {changeItemCard && Items.map(addItemCard)}
           </Grid>
           <Grid container xs={6}>
             <ItemDetails />
@@ -335,3 +348,6 @@ export default function Dashboard () {
     </div>
   )
 }
+
+
+
