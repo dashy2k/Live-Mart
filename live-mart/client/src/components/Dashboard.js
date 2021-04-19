@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import clsx from 'clsx'
 import { useHistory } from 'react-router-dom'
 import { fade, makeStyles } from '@material-ui/core/styles'
@@ -27,6 +27,7 @@ import ItemDetails from './ItemDetails'
 import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone'
 import ShoppingBasketTwoToneIcon from '@material-ui/icons/ShoppingBasketTwoTone'
 import userDp from './images/avatars/userDoge.jpg'
+import axios from 'axios'
 
 function Copyright () {
   return (
@@ -194,6 +195,18 @@ export default function Dashboard () {
     history.push('/logout')
   }
 
+  const [currentUser, setCurrentUser] = React.useState('')
+
+  useEffect(() => {
+    // GET request using axios inside useEffect React hook
+    axios.get('https://localhost:5000/api/current_user').then(response => {
+      setCurrentUser(response.data.name)
+      console.log(response)
+    })
+
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+  }, [])
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -269,10 +282,12 @@ export default function Dashboard () {
         <div className={classes.toolbarIcon}>
           <Grid container justify='center'>
             <IconButton>
-              <Avatar className={classes.profileIcon} src={userDp}>A</Avatar>
+              <Avatar className={classes.profileIcon} src={userDp}>
+                A
+              </Avatar>
             </IconButton>
             <Typography color='textSecondary' display='block'>
-              Welcome, Lil Vro
+              Welcome, {currentUser.name}
             </Typography>
           </Grid>
           <IconButton onClick={handleDrawerClose}>

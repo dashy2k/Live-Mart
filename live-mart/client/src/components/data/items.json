@@ -1,0 +1,107 @@
+[
+    {
+        "id": 0,
+        "name": "Onion",
+        "img_src": "./images/items/onion.jpg",
+        "description": " Kaanda-chan vemry tamsty",
+        "price": 35,
+        "category" : "Vegetables and Fruits"
+
+    },
+    {
+        "id": 1,
+        "name": "Apple",
+        "img_src": "./images/items/apple.jpg",
+        "description": "Doctor bhagane ki ninja technique",
+        "price": 35,
+        "category" : "Vegetables and Fruits"
+
+    },
+    {
+        "id": 2,
+        "name": "Potato",
+        "img_src": "./images/items/potato.jpg",
+        "description": "Yummpies french fry khaane ka mann hai",
+        "price": 20,
+        "category" : "Vegetables and Fruits"
+    },
+    {
+        "id": 3,
+        "name": "Mango",
+        "img_src": "./images/items/mango.jpg",
+        "description": "Peele Raseele Aam",
+        "price": 50,
+        "category" : "Vegetables and Fruits"
+    },
+    {
+        "id": 4,
+        "name": "Lady's Finger",
+        "img_src": "./images/items/ladys_finger.jpg",
+        "description": "Aisa naam kaun rakhta hai sabzi ka",
+        "price": 2,
+        "category" : "Vegetables and Fruits"
+    },
+    {
+        "id": 5,
+        "name": "Litchi",
+        "img_src": "./images/items/litchi.jpg",
+        "description": "Underrated fruit",
+        "price": 20,
+        "category" : "Vegetables and Fruits"
+    },
+
+    {
+        "id": 6,
+        "name": "Saffola Gold",
+        "img_src": "./images/items/safola_gold.jpg",
+        "description": "Heamlthy Oil",
+        "price": 140,
+        "category" : "Foodgrains, Oils and Masala"
+
+    },
+    {
+        "id": 7,
+        "name": "Toor Dal",
+        "img_src": "./images/items/toor_dal.jpg",
+        "description": "Yellow dal",
+        "price": 40,
+        "category" : "Foodgrains, Oils and Masala"
+
+    },
+    {
+        "id": 8,
+        "name": "Garam Masala",
+        "img_src": "./images/items/garam_masala.jpg",
+        "description": "Bemst Spice Blend",
+        "price": 100,
+        "category" : "Foodgrains, Oils and Masala"
+
+    },
+    {
+        "id": 9,
+        "name": "Fortune Refined",
+        "img_src": "./images/items/fortune_refined.jpg",
+        "description": "Also heamlthy oil",
+        "price": 130,
+        "category" : "Foodgrains, Oils and Masala"
+
+    },
+    {
+        "id": 10,
+        "name": "Masoor Dal",
+        "img_src": "./images/items/masoor_dal.jpg",
+        "description": "Red dal",
+        "price": 140,
+        "category" : "Foodgrains, Oils and Masala"
+
+    },
+    {
+        "id": 11,
+        "name": "Saffola Gold Cooking Oil",
+        "img_src": "./images/items/safola.jpg",
+        "description": "Heamlthy Oil",
+        "price": 140,
+        "category" : "Foodgrains, Oils and Masala"
+
+    },
+}

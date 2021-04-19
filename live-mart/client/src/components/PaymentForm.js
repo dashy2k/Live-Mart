@@ -18,6 +18,7 @@ const paymentMethods = [
 ]
 
 export default function PaymentForm () {
+
   const [paymentMode, setPaymentMode] = React.useState('COD')
 
   const handleChange = event => {
