@@ -199,9 +199,9 @@ export default function Dashboard () {
 
   useEffect(() => {
     // GET request using axios inside useEffect React hook
-    axios.get('https://localhost:5000/api/current_user').then(response => {
+    axios.get('http://localhost:5000/api/current_user').then(response => {
       setCurrentUser(response.data.name)
-      console.log(response)
+      console.log(response.data.name)
     })
 
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
@@ -287,7 +287,7 @@ export default function Dashboard () {
               </Avatar>
             </IconButton>
             <Typography color='textSecondary' display='block'>
-              Welcome, {currentUser.name}
+              Welcome, {currentUser}
             </Typography>
           </Grid>
           <IconButton onClick={handleDrawerClose}>

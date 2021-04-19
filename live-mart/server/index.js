@@ -1,24 +1,44 @@
-const express = require('express');
-const authRoutes = require('./routes/authRoutes');
-const mongoose = require('mongoose');
-const keys = require('./config/keys');
-const cookieSession = require('cookie-session');
-const passport = require('passport');
-require('./models/User');
-require('./services/passport');
+const express = require('express')
+const authRoutes = require('./routes/authRoutes')
+const mongoose = require('mongoose')
+const keys = require('./config/keys')
+const cookieSession = require('cookie-session')
+const passport = require('passport')
+const cors = require('cors')
+require('./models/User')
+require('./services/passport')
 
-mongoose.connect(keys.mongoURI,{useNewUrlParser : true,useUnifiedTopology : true});
+const whiteListedOrigins = ['http://localhost:3000', 'http://localhost:5000']
 
-const app = express();
+var corsOptionsDelegate = (req, callback) => {
+  var corsOptions
+  console.log(req.header('Origin'))
+  if (whiteListedOrigins.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = { origin: true }
+  } else {
+    corsOptions = { origin: false }
+  }
+  callback(null, corsOptions)
+}
 
-app.use(cookieSession({
-    maxAge : 30*24*60*60*1000,
-    keys : [keys.cookieKey]
-}))
+mongoose.connect(keys.mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 
-app.use(passport.initialize());
-app.use(passport.session());
+const app = express()
 
-authRoutes(app);
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+  })
+)
 
-app.listen(5000);
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(cors())
+
+authRoutes(app)
+
+app.listen(5000)
