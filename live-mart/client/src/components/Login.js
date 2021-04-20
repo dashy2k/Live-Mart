@@ -14,8 +14,6 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import InputAdornment from '@material-ui/core/InputAdornment'
-import { ReactComponent as GoogleLogo } from './icons/btn_google_dark_normal_ios.svg'
-import { ReactComponent as FacebookLogo } from './icons/facebook.svg'
 import VpnKeyIcon from '@material-ui/icons/VpnKey'
 
 function Copyright () {
@@ -115,8 +113,18 @@ const DividerWithText = ({ children }) => {
   )
 }
 
-export default function Login () {
+const GoogleIcon = () => (
+  <svg style={{ width: '20px', height: '20px' }} viewBox='0 0 24 24'>
+    <path
+      fill='currentColor'
+      d='M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z'
+    />
+  </svg>
+)
+
+export default function Login (props) {
   const classes = useStyles()
+
 
   return (
     <Grid container component='main' className={classes.root}>
@@ -195,37 +203,7 @@ export default function Login () {
             </Grid>
             <DividerWithText>OR</DividerWithText>
             <Grid container justify='center'>
-
-              <Button href='http://localhost:5000/auth/google'>
-                <Grid
-                  container
-                  className={classes.googleBtn}
-                  style={{ textTransform: 'none' }}
-                >
-                  <Grid item xs={2}>
-                    <GoogleLogo />
-                  </Grid>
-                  <Grid item className={classes.btnText} xs={10}>
-                    <Typography>Sign in with Google</Typography>
-                  </Grid>
-                </Grid>
-              </Button>
-
-              <Button href='http://localhost:5000/auth/google'>
-                <Grid
-                  container
-                  className={classes.FBBtn}
-                  style={{ textTransform: 'none' }}
-                >
-                  <Grid item xs={2}>
-                    <FacebookLogo width={36} height={36}/>
-                  </Grid>
-                  <Grid item className={classes.btnText} xs={10}>
-                    <Typography>Sign in with Facebook</Typography>
-                  </Grid>
-                </Grid>
-              </Button>
-
+              <Link href='http://localhost:5000/auth/google'>Sign in with Google</Link>
             </Grid>
             <Box mt={5}>
               <Copyright />

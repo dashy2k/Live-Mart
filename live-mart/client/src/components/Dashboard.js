@@ -27,9 +27,8 @@ import ItemDetails from './ItemDetails'
 import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone'
 import ShoppingBasketTwoToneIcon from '@material-ui/icons/ShoppingBasketTwoTone'
 import userDp from './images/avatars/userDoge.jpg'
-import axios from 'axios'
+import { connect, useSelector } from 'react-redux'
 import Items from './data/items.json'
-import { Card } from '@material-ui/core'
 
 function Copyright () {
   return (
@@ -175,17 +174,14 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-var currentCategory = ''
-
 export default function Dashboard () {
+  var currentCategory = ''
   let history = useHistory()
-
   const classes = useStyles()
 
   const [open, setOpen] = React.useState(true)
-  const [currentUser, setCurrentUser] = React.useState('')
   const [currentCard, setCurrentCard] = React.useState('')
-  const [changeItemCard,setChangeItemCard] = React.useState(false)
+  const [changeItemCard, setChangeItemCard] = React.useState(false)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -208,7 +204,7 @@ export default function Dashboard () {
     setChangeItemCard(!changeItemCard)
   }
 
-  const handleCurrentCard = (event) => {
+  const handleCurrentCard = event => {
     setCurrentCard(event.target.title)
   }
 
@@ -246,15 +242,10 @@ export default function Dashboard () {
     return null
   }
 
-  useEffect(() => {
-    // GET request using axios inside useEffect React hook
-    axios.get('http://localhost:5000/api/current_user').then(response => {
-      setCurrentUser(response.data.name)
-      console.log(response.data.name)
-    })
+  var currentUser = useSelector(state => state.authReducer.name)
+  var profileImg = useSelector(state => state.authReducer.picture)
 
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  }, [])
+  console.log(currentUser)
 
   return (
     <div className={classes.root}>
@@ -298,27 +289,37 @@ export default function Dashboard () {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          <Link color='inherit' className={classes.authlink} href='/signup'>
-            {'Sign Up'}
-          </Link>
-          <Link color='inherit' className={classes.authlink} href='/'>
-            {'Sign In'}
-          </Link>
-          <IconButton color='inherit' onClick={checkoutToCart}>
-            <Badge color='secondary'>
-              <ShoppingBasketTwoToneIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color='inherit'>
-            <Badge color='secondary'>
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color='inherit'>
-            <Badge color='secondary'>
-              <ExitToAppTwoToneIcon />
-            </Badge>
-          </IconButton>
+          {!currentUser && (
+            <Link color='inherit' className={classes.authlink} href='/signup'>
+              {'Sign Up'}
+            </Link>
+          )}
+          {!currentUser && (
+            <Link color='inherit' className={classes.authlink} href='/'>
+              {'Sign In'}
+            </Link>
+          )}
+          {currentUser && (
+            <IconButton color='inherit' onClick={checkoutToCart}>
+              <Badge color='secondary'>
+                <ShoppingBasketTwoToneIcon />
+              </Badge>
+            </IconButton>
+          )}
+          {currentUser && (
+            <IconButton color='inherit'>
+              <Badge color='secondary'>
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+          )}
+          {currentUser && (
+            <IconButton color='inherit'>
+              <Badge color='secondary'>
+                <ExitToAppTwoToneIcon />
+              </Badge>
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
       <Drawer
@@ -331,12 +332,14 @@ export default function Dashboard () {
         <div className={classes.toolbarIcon}>
           <Grid container justify='center'>
             <IconButton>
-              <Avatar className={classes.profileIcon} src={userDp}>
-                A
-              </Avatar>
+              {currentUser && (
+                <Avatar className={classes.profileIcon} src={profileImg}>
+                  A
+                </Avatar>
+              )}
             </IconButton>
             <Typography color='textSecondary' display='block'>
-              Welcome, {currentUser}
+              {currentUser && 'Welcome ' + currentUser}
             </Typography>
           </Grid>
           <IconButton onClick={handleDrawerClose}>

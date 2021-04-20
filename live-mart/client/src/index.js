@@ -1,13 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Login from './components/App';
-import { Provider } from 'react-redux';
-import { createStore , applyMiddleware } from 'redux';
-import reducers from './reducers';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import reduxThunk from 'redux-thunk'
 
-const store = createStore(reducers => [],{},applyMiddleware());
+import App from './components/App'
+import reducers from './reducers'
+
+import axios from 'axios'
+window.axios = axios
+
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
 
 ReactDOM.render(
-  <Provider store={store}><Login/></Provider>,document.getElementById('root')
-);
-
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)

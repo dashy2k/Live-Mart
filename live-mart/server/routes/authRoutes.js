@@ -10,7 +10,6 @@ module.exports = app => {
     '/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/error' }),
     function (req, res) {
-      console.log(req.user.profile)
       res.redirect('http://localhost:3000/dashboard')
     }
   )
@@ -25,7 +24,7 @@ module.exports = app => {
   })
 
   app.get('/api/current_user', (req, res) => {
-    res.send(req.user)
+    res.send(req.user);
   })
 
 }

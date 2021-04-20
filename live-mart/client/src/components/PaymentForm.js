@@ -49,7 +49,7 @@ export default function PaymentForm () {
           </TextField>
         </Grid>
       </Grid>
-      {paymentMode == 'Credit' && (
+      {paymentMode === 'Credit' && (
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <TextField
