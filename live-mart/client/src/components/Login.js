@@ -12,9 +12,11 @@ import Grid from '@material-ui/core/Grid'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
-import Divider from '@material-ui/core/Divider'
+import MailOutlineIcon from '@material-ui/icons/MailOutline'
+import InputAdornment from '@material-ui/core/InputAdornment'
 import { ReactComponent as GoogleLogo } from './icons/btn_google_dark_normal_ios.svg'
 import { ReactComponent as FacebookLogo } from './icons/facebook.svg'
+import VpnKeyIcon from '@material-ui/icons/VpnKey'
 
 function Copyright () {
   return (
@@ -80,16 +82,16 @@ const useStyles = makeStyles(theme => ({
   holder: {
     padding: theme.spacing(1)
   },
-  line : {
-    margin : theme.spacing(2,0,2)
+  line: {
+    margin: theme.spacing(2, 0, 2)
   },
   container: {
-    display: "flex",
-    alignItems: "center"
+    display: 'flex',
+    alignItems: 'center'
   },
   border: {
-    borderBottom: "1px solid lightgray",
-    width: "100%"
+    borderBottom: '1px solid lightgray',
+    width: '100%'
   },
   content: {
     paddingTop: theme.spacing(1),
@@ -98,23 +100,24 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(2),
     fontWeight: 500,
     fontSize: 22,
-    color: "lightgray"
+    color: 'lightgray'
   }
 }))
 
 const DividerWithText = ({ children }) => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
-   <div className={classes.container}>
-     <div className={classes.border} />
-     <span className={classes.content}>{children}</span>
-     <div className={classes.border} />
-   </div>
-  );
- };
+    <div className={classes.container}>
+      <div className={classes.border} />
+      <span className={classes.content}>{children}</span>
+      <div className={classes.border} />
+    </div>
+  )
+}
 
 export default function Login () {
   const classes = useStyles()
+
   return (
     <Grid container component='main' className={classes.root}>
       <CssBaseline />
@@ -129,6 +132,13 @@ export default function Login () {
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position='start'>
+                    <MailOutlineIcon />
+                  </InputAdornment>
+                )
+              }}
               variant='outlined'
               margin='normal'
               required
@@ -140,6 +150,13 @@ export default function Login () {
               autoFocus
             />
             <TextField
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position='start'>
+                    <VpnKeyIcon />
+                  </InputAdornment>
+                )
+              }}
               variant='outlined'
               margin='normal'
               required
@@ -178,14 +195,14 @@ export default function Login () {
             </Grid>
             <DividerWithText>OR</DividerWithText>
             <Grid container justify='center'>
-              {/* <GoogleLoginButton onClick={() => alert("Hello")} /> */}
+
               <Button href='http://localhost:5000/auth/google'>
                 <Grid
                   container
                   className={classes.googleBtn}
                   style={{ textTransform: 'none' }}
                 >
-                  <Grid item>
+                  <Grid item xs={2}>
                     <GoogleLogo />
                   </Grid>
                   <Grid item className={classes.btnText} xs={10}>
@@ -193,21 +210,22 @@ export default function Login () {
                   </Grid>
                 </Grid>
               </Button>
-              {/* <FacebookLoginButton onClick={() => alert("Hello")} /> */}
-              <Button href='http://localhost:5000/auth/facebook'>
+
+              <Button href='http://localhost:5000/auth/google'>
                 <Grid
                   container
                   className={classes.FBBtn}
                   style={{ textTransform: 'none' }}
                 >
-                  <Grid item className={classes.holder}>
-                    <FacebookLogo height={30} width={'auto'} />
+                  <Grid item xs={2}>
+                    <FacebookLogo width={36} height={36}/>
                   </Grid>
                   <Grid item className={classes.btnText} xs={10}>
                     <Typography>Sign in with Facebook</Typography>
                   </Grid>
                 </Grid>
               </Button>
+
             </Grid>
             <Box mt={5}>
               <Copyright />
