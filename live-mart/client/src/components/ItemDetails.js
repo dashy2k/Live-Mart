@@ -91,16 +91,16 @@ export default function ItemDetails (props) {
     <Paper elevation={3} className={classes.root}>
       <Grid container direction='row'>
         <Grid container xs={12} justify='center'>
-          <img width={300} src={onion} alt='wow! Onion is Missing :P' />
+          <img width={300} src={props.img} alt='wow! Onion is Missing :P' />
         </Grid>
         <Grid item xs={12}>
           <div className={classes.itemData}>
             <Typography variant='h4'>
-              {props.choosenCard}
+              {props.name}
               <ReactStars count={5} size={40} activeColor='#ffd700' />
             </Typography>
             <Divider />
-            <Typography color='textSecondary'>Price : ₹ 28.00/Kg</Typography>
+            <Typography color='textSecondary'>MRP : {'₹' + props.price + '.00'}</Typography>
             <Grid container justify='center'>
               <Chip
                 className={classes.status}
@@ -114,10 +114,7 @@ export default function ItemDetails (props) {
             <Grid item>
               <Typography className={classes.about}>About</Typography>
               <Typography variant='subtitle2' color='textSecondary'>
-                Onions are cultivated and used around the world. As a food item,
-                they are usually served cooked, as a vegetable or part of a
-                prepared savoury dish, but can also be eaten raw or used to make
-                pickles or chutneys
+                {props.desc}
               </Typography>
             </Grid>
             <Button

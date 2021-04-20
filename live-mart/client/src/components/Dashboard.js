@@ -184,7 +184,8 @@ export default function Dashboard () {
 
   const [open, setOpen] = React.useState(true)
   const [currentUser, setCurrentUser] = React.useState('')
-  const [changeItemCard, setChangeItemCard] = React.useState(false)
+  const [currentCard, setCurrentCard] = React.useState('')
+  const [changeItemCard,setChangeItemCard] = React.useState(false)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -207,6 +208,10 @@ export default function Dashboard () {
     setChangeItemCard(!changeItemCard)
   }
 
+  const handleCurrentCard = (event) => {
+    setCurrentCard(event.target.title)
+  }
+
   function addItemCard (itemCard) {
     const { id, name, img_src, description, price, category } = itemCard
     if (category === currentCategory) {
@@ -218,11 +223,27 @@ export default function Dashboard () {
           description={description}
           price={price}
           category={category}
+          selectedCard={handleCurrentCard}
         />
       )
     } else {
       return null
     }
+  }
+
+  function renderItemDetails (itemCard) {
+    const { id, name, img_src, description, price, category } = itemCard
+    if (name === currentCard) {
+      return (
+        <ItemDetails
+          name={name}
+          img={img_src}
+          desc={description}
+          price={price}
+        />
+      )
+    }
+    return null
   }
 
   useEffect(() => {
@@ -334,7 +355,7 @@ export default function Dashboard () {
             {Items.map(addItemCard)}
           </Grid>
           <Grid container xs={6} justify='center'>
-            {<ItemDetails choosenCard={'Onion'}/>}
+            {Items.map(renderItemDetails)}
           </Grid>
           <Box pt={4}>
             <Copyright />

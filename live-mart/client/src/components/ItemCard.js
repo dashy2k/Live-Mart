@@ -48,7 +48,7 @@ export default function ItemCard (props) {
   
   return (
     <Card key={props.id} className={classes.root}>
-      <CardActionArea onClick={console.log('Pressed Card')}> 
+      <CardActionArea onClick={props.selectedCard}> 
         <CardHeader
           action={
             <IconButton aria-label='settings'>
