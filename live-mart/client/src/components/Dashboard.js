@@ -29,8 +29,9 @@ import ShoppingBasketTwoToneIcon from '@material-ui/icons/ShoppingBasketTwoTone'
 import userDp from './images/avatars/userDoge.jpg'
 import axios from 'axios'
 import Items from './data/items.json'
+import { Card } from '@material-ui/core'
 
-function Copyright() {
+function Copyright () {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
@@ -170,42 +171,20 @@ const useStyles = makeStyles(theme => ({
     }
   },
   itemContainer: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(1)
   }
 }))
 
-var currentCategory = 'Fruits & Vegetables';
+var currentCategory = ''
 
-function addItemCard(itemCard) {
-  const { id, name, img_src, description, price, category } = itemCard
-  if (category === currentCategory) {
-    
-    return (
-      <ItemCard
-        key={id}
-        name={name}
-        img={img_src}
-        description={description}
-        price={price}
-        category={category}
-      />
-    )
-  } else {
-    return null;
-  }
-}
-
-
-export default function Dashboard() {
+export default function Dashboard () {
   let history = useHistory()
 
   const classes = useStyles()
 
   const [open, setOpen] = React.useState(true)
   const [currentUser, setCurrentUser] = React.useState('')
-  const [changeItemCard, setChangeItemCard] = React.useState(true)
-
-
+  const [changeItemCard, setChangeItemCard] = React.useState(false)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -222,12 +201,29 @@ export default function Dashboard() {
     history.push('/logout')
   }
 
-  const handleCategory = (event) => {
-    console.log('Button Pressed');
-    currentCategory = event.target.textContent;
-    setChangeItemCard(!changeItemCard);
+  const handleCategory = event => {
+    console.log('Button Pressed')
+    currentCategory = event.target.textContent
+    setChangeItemCard(!changeItemCard)
   }
 
+  function addItemCard (itemCard) {
+    const { id, name, img_src, description, price, category } = itemCard
+    if (category === currentCategory) {
+      return (
+        <ItemCard
+          key={id}
+          name={name}
+          img={img_src}
+          description={description}
+          price={price}
+          category={category}
+        />
+      )
+    } else {
+      return null
+    }
+  }
 
   useEffect(() => {
     // GET request using axios inside useEffect React hook
@@ -334,11 +330,11 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Grid container className={classes.itemContainer}>
-          <Grid container xs={6}>
-            {changeItemCard ? Items.map(addItemCard) : Items.map(addItemCard)}
+          <Grid container xs={6} justify='center'>
+            {Items.map(addItemCard)}
           </Grid>
-          <Grid container xs={6}>
-            <ItemDetails />
+          <Grid container xs={6} justify='center'>
+            {<ItemDetails choosenCard={'Onion'}/>}
           </Grid>
           <Box pt={4}>
             <Copyright />
@@ -348,6 +344,3 @@ export default function Dashboard() {
     </div>
   )
 }
-
-
-

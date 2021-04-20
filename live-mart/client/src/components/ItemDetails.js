@@ -10,19 +10,21 @@ import Divider from '@material-ui/core/Divider'
 import ReactStars from 'react-rating-stars-component'
 import Avatar from '@material-ui/core/Avatar'
 import Chip from '@material-ui/core/Chip'
-import CheckCircleIcon from '@material-ui/icons/CheckCircle'
-import { green, red , orange} from '@material-ui/core/colors'
+import CheckIcon from '@material-ui/icons/Check'
+import { green, red, orange, deepPurple, blue } from '@material-ui/core/colors'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Button from '@material-ui/core/Button'
 import ListSubheader from '@material-ui/core/ListSubheader'
 import PeopleIcon from '@material-ui/icons/People'
-
+import { Paper } from '@material-ui/core'
+import RemoveIcon from '@material-ui/icons/Remove'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    alignItems: 'center'
+    justifyContent: 'center',
+    margin: theme.spacing(2)
   },
   extendedIcon: {
     marginRight: theme.spacing(1)
@@ -37,92 +39,125 @@ const useStyles = makeStyles(theme => ({
     }
   },
   inStock: {
-    color: '#fff',
-    backgroundColor: green[900]
+    backgroundColor: green[800],
+    color: theme.palette.common.white
   },
   outStock: {
     color: '#fff',
     backgroundColor: red[500]
   },
   status: {
-    backgroundColor: green[100],
+    backgroundColor: theme.palette.common.white,
     width: 400,
-    padding: theme.spacing(2)
+    padding: theme.spacing(3)
   },
-  sellerButton : {
-      backgroundColor : orange[400],
-      color : theme.palette.getContrastText(orange[400]),
-      borderRadius : 15,
-      margin : theme.spacing(2,0,2),
-      width: 400,
+  sellerButton: {
+    borderRadius: 15,
+    margin: theme.spacing(2, 0, 2),
+    width: 400
+  },
+  about: {
+    margin: theme.spacing(2, 0, 2)
+  },
+  quantity : {
+    backgroundColor : theme.palette.common.white,
+    color : theme.palette.common.black
   }
 }))
 
-export default function ItemDetails () {
+export default function ItemDetails (props) {
   const classes = useStyles()
+
+  const [showRetailers, setShowRetailers] = React.useState(false)
+
+  const [itemQuantity, setItemQuantity] = React.useState(1)
+
+  const handleRetailers = () => {
+    setShowRetailers(!showRetailers)
+  }
+
+  const handleAdd = () => {
+    setItemQuantity(itemQuantity+1)
+  }
+
+  const handleRemove = () => {
+    if(itemQuantity>=2){
+      setItemQuantity(itemQuantity-1)
+    }
+    else setItemQuantity(1)
+  }
+
   return (
-    <div className={classes.root}>
-      <Grid container direction='row' justify='center' alignItems='center'>
-        <Grid item xs={12}>
-          <img width={300} src={onion} alt='wow! Onion is Missing :P'/>
+    <Paper elevation={3} className={classes.root}>
+      <Grid container direction='row'>
+        <Grid container xs={12} justify='center'>
+          <img width={300} src={onion} alt='wow! Onion is Missing :P' />
         </Grid>
         <Grid item xs={12}>
           <div className={classes.itemData}>
-            <Typography variant='h5'>Onions</Typography>
+            <Typography variant='h4'>
+              {props.choosenCard}
+              <ReactStars count={5} size={40} activeColor='#ffd700' />
+            </Typography>
             <Divider />
-            <Typography>Rs 28.00/Kg</Typography>
-            <ReactStars count={5} size={40} activeColor='#ffd700' />
-            <Chip
-              className={classes.status}
-              avatar={
-                <Avatar>
-                  <CheckCircleIcon
-                    className={classes.inStock}
-                    style={{ color: green[100] }}
-                  />
-                </Avatar>
-              }
-              label='Currently in Stock'
-              clickable
-              variant='outlined'
-            />
-            <Button startIcon={<PeopleIcon/>} variant='contained' className={classes.sellerButton}>
-              View Sellers
-            </Button>
-            <List
-              component='nav'
-              aria-label='main mailbox folders'
-              subheader={
-                <ListSubheader component='div' id='nested-list-subheader'>
-                  Authorized Retailers
-                </ListSubheader>
-              }
-            >
-              <ListItem button>
-                <ListItemText primary='Big Basket' />
-              </ListItem>
-              <ListItem button>
-                <ListItemText primary='Amazon' />
-              </ListItem>
-            </List>
-            <Divider />
-            <List component='nav' aria-label='secondary mailbox folders'>
-              <ListItem button>
-                <ListItemText primary='About' secondary='Onions are cultivated and used around the world. As a food item, they are usually served cooked, 
-                as a vegetable or part of a prepared savoury dish, but can also be eaten raw or used to make pickles or chutneys'/>
-              </ListItem>
-            </List>
-            <div className={classes.floatButtons}>
-              <Fab color='primary' aria-label='add'>
-                <AddIcon />
-              </Fab>
-              <Fab color='secondary' aria-label='edit'>
+            <Typography color='textSecondary'>Price : ₹ 28.00/Kg</Typography>
+            <Grid container justify='center'>
+              <Chip
+                className={classes.status}
+                avatar={
+                  <Avatar>
+                    <CheckIcon className={classes.inStock} />
+                  </Avatar>
+                }
+                label='Currently in Stock'
+              />
+            <Grid item>
+              <Typography className={classes.about}>About</Typography>
+              <Typography variant='subtitle2' color='textSecondary'>
+                Onions are cultivated and used around the world. As a food item,
+                they are usually served cooked, as a vegetable or part of a
+                prepared savoury dish, but can also be eaten raw or used to make
+                pickles or chutneys
+              </Typography>
+            </Grid>
+            <Button
+                startIcon={<PeopleIcon />}
+                variant='contained'
+                color='primary'
+                className={classes.sellerButton}
+                onClick={handleRetailers}
+              >
+                View Sellers
+              </Button>
+            </Grid>
+            {showRetailers && (
+              <React.Fragment>
+                <List component='nav' aria-label='main mailbox folders'>
+                  <ListItem button>
+                    <ListItemText primary='Big Basket' />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemText primary='Amazon' />
+                  </ListItem>
+                </List>
+                <Divider />
+              </React.Fragment>
+            )}
+            <Grid container className={classes.floatButtons} justify='center'>
+                <Fab color='primary' aria-label='remove' size='small' onClick={handleRemove} >
+                  <RemoveIcon />
+                </Fab>
+                <Avatar className={classes.quantity}>{itemQuantity}</Avatar>
+                <Fab color='primary' aria-label='add' size='small' onClick={handleAdd}>
+                  <AddIcon />
+                </Fab>
+              <Fab color='secondary' aria-label='edit' size='small'>
                 <ShoppingBasketIcon />
               </Fab>
-            </div>
+            </Grid>
           </div>
         </Grid>
       </Grid>
-    </div>
+    </Paper>
   )
 }

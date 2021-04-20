@@ -15,11 +15,13 @@ import ShareIcon from '@material-ui/icons/Share'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 import img from './images/cards/onion.jpg'
+import { CardActionArea } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 230,
-    margin : theme.spacing(2)
+    width: 200,
+    margin: theme.spacing(1),
+    height: 300
   },
   media: {
     height: 0,
@@ -41,42 +43,32 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function ItemCard (props) {
-  const classes = useStyles()
-  const [expanded, setExpanded] = React.useState(false)
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded)
-  }
-  console.log(props.img)
+  const classes = useStyles()
+  
   return (
     <Card key={props.id} className={classes.root}>
-      <CardHeader
-        action={
-          <IconButton aria-label='settings'>
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={props.name}
-        subheader='September 14, 2016'
-      />
-      <CardMedia
-        className={classes.media}
-        image={props.img}
-        title={props.name}
-      />
-      <CardContent>
-        <Typography variant='body2' color='textSecondary' component='p'>
-          {props.description}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label='add to favorites'>
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label='share'>
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
+      <CardActionArea onClick={console.log('Pressed Card')}> 
+        <CardHeader
+          action={
+            <IconButton aria-label='settings'>
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title={props.name}
+          subheader={'₹' + props.price + '.00'}
+        />
+        <CardMedia
+          className={classes.media}
+          image={props.img}
+          title={props.name}
+        />
+        <CardContent>
+          <Typography variant='body2' color='textSecondary' component='p'>
+            {props.description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
     </Card>
   )
 }

@@ -10,8 +10,6 @@ import ExpandMore from '@material-ui/icons/ExpandMore'
 import List from '@material-ui/core/List'
 import { makeStyles } from '@material-ui/core/styles'
 
-
-
 export default function CustomerItems(props) {
 
   const useStyles = makeStyles(theme => ({
@@ -25,13 +23,12 @@ export default function CustomerItems(props) {
     }
   }))
   const classes = useStyles()
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = React.useState(false)
 
   const handleClick = () => {
     setOpen(!open)
   }
 
-  
   return (
     <List>
       <ListItem button onClick={handleClick}>
@@ -43,13 +40,13 @@ export default function CustomerItems(props) {
       </ListItem>
       <Collapse in={open} timeout='auto' unmountOnExit>
         <List component='div' disablePadding >
-          <ListItem button className={classes.nested} onClick={props.handleCategory} value='Fruits & Vegetables'>
+          <ListItem button className={classes.nested} onClick={props.handleCategory}>
             <ListItemText secondary='Fruits & Vegetables' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={props.handleCategory} id='Fruits & Vegetables'>
+          <ListItem button className={classes.nested} onClick={props.handleCategory}>
             <ListItemText secondary='Foodgrains,Oils & Masala' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={props.handleCategory} id='Fruits & Vegetables'>
+          <ListItem button className={classes.nested} onClick={props.handleCategory}>
             <ListItemText secondary='Bakery,Cakes & Dairy' />
           </ListItem>
           <ListItem button className={classes.nested} onClick={props.handleCategory}>
