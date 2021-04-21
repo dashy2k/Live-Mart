@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function SignUp () {
+export default function SignUp (props) {
   const classes = useStyles()
   const [state, setState] = React.useState({
     customer: true,
@@ -72,7 +72,13 @@ export default function SignUp () {
   const handleChange = event => {
     setState({ ...state, [event.target.name]: event.target.checked })
   }
+
   const { customer, retailer, wholesaler } = state
+
+  const handleSignIn = () => {
+    props.viewScreen(0)
+  }
+
   return (
     <Container component='main' maxWidth='xs'>
       <CssBaseline />
@@ -218,7 +224,7 @@ export default function SignUp () {
           </Button>
           <Grid container justify='flex-end'>
             <Grid item>
-              <Link href='/' variant='body2'>
+              <Link variant='body2' onCLick={handleSignIn}>
                 Already have an account? Sign in
               </Link>
             </Grid>

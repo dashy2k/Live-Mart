@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import clsx from 'clsx'
 import { useHistory } from 'react-router-dom'
 import { fade, makeStyles } from '@material-ui/core/styles'
@@ -26,8 +26,7 @@ import ItemCard from './ItemCard'
 import ItemDetails from './ItemDetails'
 import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone'
 import ShoppingBasketTwoToneIcon from '@material-ui/icons/ShoppingBasketTwoTone'
-import userDp from './images/avatars/userDoge.jpg'
-import { connect, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Items from './data/items.json'
 
 function Copyright () {
@@ -174,8 +173,10 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+var currentCategory = ''
+
 export default function Dashboard () {
-  var currentCategory = ''
+
   let history = useHistory()
   const classes = useStyles()
 
@@ -192,10 +193,6 @@ export default function Dashboard () {
 
   const checkoutToCart = () => {
     history.push('/checkout')
-  }
-
-  const handleLogout = () => {
-    history.push('/logout')
   }
 
   const handleCategory = event => {
@@ -232,6 +229,7 @@ export default function Dashboard () {
     if (name === currentCard) {
       return (
         <ItemDetails
+          key={id} 
           name={name}
           img={img_src}
           desc={description}
