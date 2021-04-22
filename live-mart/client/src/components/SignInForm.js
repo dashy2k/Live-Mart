@@ -15,7 +15,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import VpnKeyIcon from '@material-ui/icons/VpnKey'
-import { Icon } from '@material-ui/core'
 
 function Copyright () {
   return (
@@ -75,10 +74,8 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(0, 0, 2),
   },
   googleBtn: {
-    width: 400,
+    margin : theme.spacing(2,0,2),
     backgroundColor: '#4285F4',
-    height: 45,
-    borderRadius: 5
   },
   btnText: {
     color: theme.palette.common.white,
@@ -201,7 +198,7 @@ export default function Login (props) {
         </Grid>
         <DividerWithText>OR</DividerWithText>
         <Grid container justify='center'>
-          <Button color='primary' variant='contained' className={classes.googleBtn} fullwidth href='http://localhost:5000/auth/google' startIcon={icon()}>
+          <Button fullWidth color='primary' variant='contained' className={classes.googleBtn} href='http://localhost:5000/auth/google' startIcon={icon()}>
             Sign in with Google
           </Button>
         </Grid>
