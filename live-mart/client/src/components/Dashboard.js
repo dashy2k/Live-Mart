@@ -312,7 +312,7 @@ export default function Dashboard () {
             </IconButton>
           )}
           {currentUser && (
-            <IconButton color='inherit'>
+            <IconButton color='inherit' href='http://localhost:5000/api/logout'>
               <Badge color='secondary'>
                 <ExitToAppTwoToneIcon />
               </Badge>
