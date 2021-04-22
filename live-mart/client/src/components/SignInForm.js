@@ -15,6 +15,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import VpnKeyIcon from '@material-ui/icons/VpnKey'
+import { Icon } from '@material-ui/core'
 
 function Copyright () {
   return (
@@ -28,6 +29,15 @@ function Copyright () {
     </Typography>
   )
 }
+
+const icon = () => (
+  <svg style={{ width: '20px', height: '20px' }} viewBox="0 0 24 24">
+    <path
+      fill="currentColor"
+      d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z"
+    />
+  </svg>
+);
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -57,8 +67,12 @@ const useStyles = makeStyles(theme => ({
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1)
   },
-  submit: {
-    margin: theme.spacing(3, 0, 2)
+  signIn : {
+    margin: theme.spacing(3, 0, 2),
+
+  },
+  signUp : {
+    margin: theme.spacing(0, 0, 2),
   },
   googleBtn: {
     width: 400,
@@ -70,12 +84,6 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.common.white,
     textAlign: 'center',
     padding: theme.spacing(1.5, 0, 2)
-  },
-  FBBtn: {
-    width: 400,
-    backgroundColor: '#4267b2',
-    height: 45,
-    borderRadius: 5
   },
   holder: {
     padding: theme.spacing(1)
@@ -174,7 +182,7 @@ export default function Login (props) {
           fullWidth
           variant='contained'
           color='primary'
-          className={classes.submit}
+          className={classes.signIn}
           href='/verifyOTP'
         >
           Sign In
@@ -193,9 +201,9 @@ export default function Login (props) {
         </Grid>
         <DividerWithText>OR</DividerWithText>
         <Grid container justify='center'>
-          <Link href='http://localhost:5000/auth/google'>
+          <Button color='primary' variant='contained' className={classes.googleBtn} fullwidth href='http://localhost:5000/auth/google' startIcon={icon()}>
             Sign in with Google
-          </Link>
+          </Button>
         </Grid>
         <Box mt={5}>
           <Copyright />
