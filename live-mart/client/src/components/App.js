@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import SignUp from './SignUpForm'
 import Dashboard from './Dashboard'
-import Login from './Login'
 import Checkout from './UserCheckout'
+import SignIn from './SignInForm'
+import VerifyOTP from './VerifyOTP'
 import * as actions from '../actions'
-import VerifyOTP from './VerifyOTP';
 
-class App extends Component{
-
-  componentDidMount() {
+class App extends Component {
+  componentDidMount () {
     this.props.fetchUser()
   }
   render () {
@@ -19,11 +18,11 @@ class App extends Component{
       <div className='container'>
         <BrowserRouter>
           <div>
-            <Route exact path='/' component={Login} />
+            <Route exact path='/' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/checkout' component={Checkout} />
-            <Route path='/verifyOTP' component={VerifyOTP}/>
+            <Route path='/verifyOTP' component={VerifyOTP} />
           </div>
         </BrowserRouter>
       </div>
