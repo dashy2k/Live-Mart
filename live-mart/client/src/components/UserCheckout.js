@@ -116,6 +116,7 @@ export default function Checkout () {
             Live Mart
           </Typography>
           <Chip
+            style={{margin:'20px'}}
             label='Back to Store'
             clickable
             color='secondary'

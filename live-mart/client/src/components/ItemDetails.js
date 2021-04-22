@@ -86,7 +86,9 @@ export default function ItemDetails (props) {
     }
     else setItemQuantity(1)
   }
-
+  const addToCartHandler =()=>{
+    props.addToCart(props.id);
+  }
   return (
     <Paper elevation={3} className={classes.root}>
       <Grid container direction='row'>
@@ -148,8 +150,8 @@ export default function ItemDetails (props) {
                 <Fab color='primary' aria-label='add' size='small' onClick={handleAdd}>
                   <AddIcon />
                 </Fab>
-              <Fab color='secondary' aria-label='edit' size='small'>
-                <ShoppingBasketIcon />
+              <Fab color='secondary' aria-label='edit' size='small' onClick={addToCartHandler}>
+                <ShoppingBasketIcon  />
               </Fab>
             </Grid>
           </div>

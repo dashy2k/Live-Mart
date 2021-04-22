@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{ useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card'
@@ -12,6 +12,12 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 import Divider from '@material-ui/core/Divider'
+import {addToCart} from '../actions/user_actions'
+import {useDispatch} from 'react-redux';
+import Axios from 'axios'
+
+
+
 
 const useStyles = makeStyles(theme => ({
   listItem: {
@@ -50,9 +56,23 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function Review () {
-  const classes = useStyles()
+export default function Review (props) {
+  const dispatch = useDispatch();
+  const productId=props.match.params.productId;
+  const[Product,setProduct]=useState([])
 
+  useEffect(() => {
+    Axios.get(`api/product/product_by_id?id=${productId}&type=single`)
+    .then(response=>{
+      setProduct(response.data[0])
+    })
+    
+    },[]);
+  
+  const classes = useStyles()
+  const addToCartHandler=(productId)=>{
+      dispatch(addToCart(productId))
+  }
   return (
     <React.Fragment>
       <Typography variant='h6' gutterBottom>
@@ -72,7 +92,8 @@ export default function Review () {
         </div>
         <Divider orientation='vertical' flexItem />
         <div className={classes.details}>
-          <CardContent className={classes.content}>
+          <CardContent className={classes.content}
+          addToCart={addToCartHandler}>
             <Typography color='textPrimary' variant='h6'>
               ₹ 28.00
             </Typography>
