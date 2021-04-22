@@ -7,19 +7,9 @@ const passport = require('passport')
 const cors = require('cors')
 require('./models/User')
 require('./services/passport')
+const addToCart = require('./services/addToCartService')
 
-const whiteListedOrigins = ['http://localhost:3000', 'http://localhost:5000']
 
-var corsOptionsDelegate = (req, callback) => {
-  var corsOptions
-  console.log(req.header('Origin'))
-  if (whiteListedOrigins.indexOf(req.header('Origin')) !== -1) {
-    corsOptions = { origin: true }
-  } else {
-    corsOptions = { origin: false }
-  }
-  callback(null, corsOptions)
-}
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
@@ -35,10 +25,13 @@ app.use(
   })
 )
 
+mongoose.set('useFindAndModify', false)
+
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(cors())
 
 authRoutes(app)
+addToCart(app)
 
 app.listen(5000)

@@ -1,23 +1,14 @@
-import React ,{ useEffect, useState } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
-import Button from '@material-ui/core/Button'
-import src1 from './images/cards/tomatoes.jpg'
-import src2 from './images/cards/cucumber.jpg'
-import IconButton from '@material-ui/core/IconButton'
-import DeleteIcon from '@material-ui/icons/Delete'
-import Grid from '@material-ui/core/Grid'
-import TextField from '@material-ui/core/TextField'
 import Divider from '@material-ui/core/Divider'
-import {addToCart} from '../actions/user_actions'
-import {useDispatch} from 'react-redux';
-import Axios from 'axios'
-
-
-
+import Grid from '@material-ui/core/Grid'
+import IconButton from '@material-ui/core/IconButton'
+import { makeStyles } from '@material-ui/core/styles'
+import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography'
+import DeleteIcon from '@material-ui/icons/Delete'
+import React from 'react'
 
 const useStyles = makeStyles(theme => ({
   listItem: {
@@ -57,73 +48,22 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function Review (props) {
-  const dispatch = useDispatch();
-  const productId=props.match.params.productId;
-  const[Product,setProduct]=useState([])
-
-  useEffect(() => {
-    Axios.get(`api/product/product_by_id?id=${productId}&type=single`)
-    .then(response=>{
-      setProduct(response.data[0])
-    })
-    
-    },[]);
-  
   const classes = useStyles()
-  const addToCartHandler=(productId)=>{
-      dispatch(addToCart(productId))
-  }
+  console.log(props)
   return (
     <React.Fragment>
       <Typography variant='h6' gutterBottom>
         Order summary
       </Typography>
       <Card className={classes.root}>
-        <CardMedia className={classes.cover} image={src1} title='Tomatoes' />
+        <CardMedia className={classes.cover} image={(props.img)} title='Tomatoes' />
         <div className={classes.details}>
           <CardContent className={classes.content}>
             <Typography component='h6' variant='h6'>
-              Tomatoes
+              {props.name}
             </Typography>
             <Typography variant='subtitle1' color='textSecondary'>
-              ₹ 28.00
-            </Typography>
-          </CardContent>
-        </div>
-        <Divider orientation='vertical' flexItem />
-        <div className={classes.details}>
-          <CardContent className={classes.content}
-          addToCart={addToCartHandler}>
-            <Typography color='textPrimary' variant='h6'>
-              ₹ 28.00
-            </Typography>
-            <Grid container className={classes.controls} justify='flex-end'>
-              <TextField
-                className={classes.quantity}
-                id='outlined-number'
-                label='Quantity'
-                type='number'
-                InputLabelProps={{
-                  shrink: true
-                }}
-                defaultValue={1}
-              />
-              <IconButton aria-label='delete'>
-                <DeleteIcon/>
-              </IconButton>
-            </Grid>
-          </CardContent>
-        </div>
-      </Card>
-      <Card className={classes.root}>
-        <CardMedia className={classes.cover} image={src2} title='Tomatoes' />
-        <div className={classes.details}>
-          <CardContent className={classes.content}>
-            <Typography component='h6' variant='h6'>
-              Cucumber
-            </Typography>
-            <Typography variant='subtitle1' color='textSecondary'>
-              ₹ 34.00
+              {'₹' + props.price + '.00'}
             </Typography>
           </CardContent>
         </div>
@@ -131,21 +71,20 @@ export default function Review (props) {
         <div className={classes.details}>
           <CardContent className={classes.content}>
             <Typography color='textPrimary' variant='h6'>
-              ₹ 68.00
+              {'₹' + props.price * props.quantity + '.00'}
             </Typography>
             <Grid container className={classes.controls} justify='flex-end'>
               <TextField
-                className={classes.quantity}
-                id='outlined-number'
+                id='filled-read-only-input'
                 label='Quantity'
-                type='number'
-                InputLabelProps={{
-                  shrink: true
+                value={props.quantity}
+                InputProps={{
+                  readOnly: true
                 }}
-                defaultValue={2}
+                variant='filled'
               />
               <IconButton aria-label='delete'>
-                <DeleteIcon/>
+                <DeleteIcon />
               </IconButton>
             </Grid>
           </CardContent>

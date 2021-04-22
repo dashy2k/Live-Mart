@@ -1,8 +1,29 @@
-import axios from 'axios';
-import { FETCH_USER} from './types';
+import axios from 'axios'
+import { FETCH_USER, ADD_TO_CART } from './types'
 
 export const fetchUser = () => async dispatch => {
-  const res = await axios.get('/api/current_user');
+  console.log('fetchUSerUsed')
+  const res = await axios.get('/api/current_user')
 
-  dispatch({ type: FETCH_USER, payload: res.data });
-};
+  dispatch({ type: FETCH_USER, payload: res.data })
+}
+
+export const addToCart = (productId,product,quantity,price,img) => async dispatch => {
+  console.log('addToCartUsed')
+  const item = await axios
+    .get(
+      '/api/current_user/actions/addToCart?productId=' +
+        productId +
+        '&product=' +
+        product +
+        '&quantity=' +
+        quantity +
+        '&price=' +
+        price +
+        '&img=' +
+        encodeURI(img)
+    )
+    .then(res => res.data)
+
+  dispatch({ type: ADD_TO_CART, payload: item })
+}

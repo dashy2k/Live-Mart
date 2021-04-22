@@ -1,22 +1,22 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { useHistory } from 'react-router-dom'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
+import Button from '@material-ui/core/Button'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Grid from '@material-ui/core/Grid'
+import Link from '@material-ui/core/Link'
 import Paper from '@material-ui/core/Paper'
-import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
 import StepLabel from '@material-ui/core/StepLabel'
-import Button from '@material-ui/core/Button'
-import Link from '@material-ui/core/Link'
+import Stepper from '@material-ui/core/Stepper'
+import { makeStyles } from '@material-ui/core/styles'
+import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import AddressForm from './AddressForm'
+import OrderConfirmation from './OrderConfirmation'
 import PaymentForm from './PaymentForm'
 import Review from './ReviewItems'
-import Chip from '@material-ui/core/Chip'
-import ArrowBackIcon from '@material-ui/icons/ArrowBack'
-import OrderConfirmation from './OrderConfirmation'
 
 function Copyright () {
   return (
@@ -66,6 +66,10 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1)
   },
+  back : {
+    color: '#ffffff',
+    padding : theme.spacing(2)
+  }
 }))
 
 const steps = [
@@ -75,23 +79,21 @@ const steps = [
   'Order Confirmation'
 ]
 
-function getStepContent (step) {
-  switch (step) {
-    case 0:
-      return <Review />
-    case 1:
-      return <AddressForm />
-    case 2:
-      return <PaymentForm />
-    case 3:
-      return <OrderConfirmation />
-    default:
-      throw new Error('Unknown step')
-  }
+function renderCartItems (items) {
+  console.log(typeof items.imgURL)
+  return (
+    <Review
+      key={items.productId}
+      name={items.product}
+      quantity={items.quantity}
+      price={items.price}
+      img={items.imgURL}
+    />
+  )
 }
 
 export default function Checkout () {
-  let history = useHistory()
+  let userCart = useSelector(state => state.auth.cart)
   const classes = useStyles()
   const [activeStep, setActiveStep] = React.useState(0)
 
@@ -103,8 +105,19 @@ export default function Checkout () {
     setActiveStep(activeStep - 1)
   }
 
-  const handleStoreNav = () => {
-    history.push('/dashboard')
+  function getStepContent (step) {
+    switch (step) {
+      case 0:
+        return userCart.map(renderCartItems)
+      case 1:
+        return <AddressForm />
+      case 2:
+        return <PaymentForm />
+      case 3:
+        return <OrderConfirmation />
+      default:
+        throw new Error('Unknown step')
+    }
   }
 
   return (
@@ -112,18 +125,11 @@ export default function Checkout () {
       <CssBaseline />
       <AppBar position='absolute' color='primary' className={classes.appBar}>
         <Toolbar>
-          <Typography variant='h6' color='inherit' noWrap>
-            Live Mart
-          </Typography>
-          <Chip
-            style={{margin:'20px'}}
-            label='Back to Store'
-            clickable
-            color='secondary'
-            onClick={handleStoreNav}
-            deleteIcon={<ArrowBackIcon />}
-            variant='outlined'
-          />
+          <Grid container>
+                  <Button aria-label='like' className={classes.back}>
+                    <ArrowBackIcon/> Back To Live Mart
+                  </Button>
+          </Grid>
         </Toolbar>
       </AppBar>
       <main className={classes.layout}>
@@ -131,7 +137,11 @@ export default function Checkout () {
           <Typography component='h1' variant='h4' align='center'>
             Checkout
           </Typography>
-          <Stepper activeStep={activeStep} className={classes.stepper} alternativeLabel>
+          <Stepper
+            activeStep={activeStep}
+            className={classes.stepper}
+            alternativeLabel
+          >
             {steps.map(label => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
@@ -141,7 +151,6 @@ export default function Checkout () {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
-                
                 <Typography variant='h5' gutterBottom>
                   Thank you for your order.
                 </Typography>

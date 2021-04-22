@@ -1,25 +1,25 @@
-import React from 'react'
-import onion from './images/items/onion.jpg'
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import { makeStyles } from '@material-ui/core/styles'
-import Fab from '@material-ui/core/Fab'
-import AddIcon from '@material-ui/icons/Add'
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
-import Divider from '@material-ui/core/Divider'
-import ReactStars from 'react-rating-stars-component'
+import { Paper } from '@material-ui/core'
 import Avatar from '@material-ui/core/Avatar'
+import Button from '@material-ui/core/Button'
 import Chip from '@material-ui/core/Chip'
-import CheckIcon from '@material-ui/icons/Check'
-import { green, red, orange, deepPurple, blue } from '@material-ui/core/colors'
+import { green, red } from '@material-ui/core/colors'
+import Divider from '@material-ui/core/Divider'
+import Fab from '@material-ui/core/Fab'
+import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-import Button from '@material-ui/core/Button'
-import ListSubheader from '@material-ui/core/ListSubheader'
+import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+import AddIcon from '@material-ui/icons/Add'
+import CheckIcon from '@material-ui/icons/Check'
 import PeopleIcon from '@material-ui/icons/People'
-import { Paper } from '@material-ui/core'
 import RemoveIcon from '@material-ui/icons/Remove'
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
+import React from 'react'
+import ReactStars from 'react-rating-stars-component'
+import { connect } from 'react-redux'
+import * as actions from '../actions'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -59,13 +59,14 @@ const useStyles = makeStyles(theme => ({
   about: {
     margin: theme.spacing(2, 0, 2)
   },
-  quantity : {
-    backgroundColor : theme.palette.common.white,
-    color : theme.palette.common.black
+  quantity: {
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.common.black
   }
 }))
 
-export default function ItemDetails (props) {
+function ItemDetails (props) {
+  console.log('Item Details')
   const classes = useStyles()
 
   const [showRetailers, setShowRetailers] = React.useState(false)
@@ -77,18 +78,19 @@ export default function ItemDetails (props) {
   }
 
   const handleAdd = () => {
-    setItemQuantity(itemQuantity+1)
+    setItemQuantity(itemQuantity + 1)
   }
 
   const handleRemove = () => {
-    if(itemQuantity>=2){
-      setItemQuantity(itemQuantity-1)
-    }
-    else setItemQuantity(1)
+    if (itemQuantity >= 2) {
+      setItemQuantity(itemQuantity - 1)
+    } else setItemQuantity(1)
   }
-  const addToCartHandler =()=>{
-    props.addToCart(props.id);
+
+  function addToCartHandler(){
+    props.addToCart(props.productId, props.name, itemQuantity,props.price,props.img)
   }
+
   return (
     <Paper elevation={3} className={classes.root}>
       <Grid container direction='row'>
@@ -102,7 +104,9 @@ export default function ItemDetails (props) {
               <ReactStars count={5} size={40} activeColor='#ffd700' />
             </Typography>
             <Divider />
-            <Typography color='textSecondary'>MRP : {'₹' + props.price + '.00'}</Typography>
+            <Typography color='textSecondary'>
+              MRP : {'₹' + props.price + '.00'}
+            </Typography>
             <Grid container justify='center'>
               <Chip
                 className={classes.status}
@@ -113,13 +117,13 @@ export default function ItemDetails (props) {
                 }
                 label='Currently in Stock'
               />
-            <Grid item>
-              <Typography className={classes.about}>About</Typography>
-              <Typography variant='subtitle2' color='textSecondary'>
-                {props.desc}
-              </Typography>
-            </Grid>
-            <Button
+              <Grid item>
+                <Typography className={classes.about}>About</Typography>
+                <Typography variant='subtitle2' color='textSecondary'>
+                  {props.desc}
+                </Typography>
+              </Grid>
+              <Button
                 startIcon={<PeopleIcon />}
                 variant='contained'
                 color='primary'
@@ -143,15 +147,30 @@ export default function ItemDetails (props) {
               </React.Fragment>
             )}
             <Grid container className={classes.floatButtons} justify='center'>
-                <Fab color='primary' aria-label='remove' size='small' onClick={handleRemove} >
-                  <RemoveIcon />
-                </Fab>
-                <Avatar className={classes.quantity}>{itemQuantity}</Avatar>
-                <Fab color='primary' aria-label='add' size='small' onClick={handleAdd}>
-                  <AddIcon />
-                </Fab>
-              <Fab color='secondary' aria-label='edit' size='small' onClick={addToCartHandler}>
-                <ShoppingBasketIcon  />
+              <Fab
+                color='primary'
+                aria-label='remove'
+                size='small'
+                onClick={handleRemove}
+              >
+                <RemoveIcon />
+              </Fab>
+              <Avatar className={classes.quantity}>{itemQuantity}</Avatar>
+              <Fab
+                color='primary'
+                aria-label='add'
+                size='small'
+                onClick={handleAdd}
+              >
+                <AddIcon />
+              </Fab>
+              <Fab
+                color='secondary'
+                aria-label='edit'
+                size='small'
+                onClick={addToCartHandler}
+              >
+                <ShoppingBasketIcon />
               </Fab>
             </Grid>
           </div>
@@ -160,3 +179,5 @@ export default function ItemDetails (props) {
     </Paper>
   )
 }
+
+export default connect(null, actions)(ItemDetails)

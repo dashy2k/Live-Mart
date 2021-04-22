@@ -11,7 +11,7 @@ const userSchema = new Schema({
         default:[]
 
     },
-    history:{
+    orderHistory:{
         type: Array,
         default: []
     }

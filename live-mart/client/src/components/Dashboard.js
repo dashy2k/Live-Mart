@@ -1,33 +1,33 @@
-import React from 'react'
-import clsx from 'clsx'
-import { useHistory } from 'react-router-dom'
-import { fade, makeStyles } from '@material-ui/core/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Drawer from '@material-ui/core/Drawer'
-import Box from '@material-ui/core/Box'
 import AppBar from '@material-ui/core/AppBar'
+import Avatar from '@material-ui/core/Avatar'
+import Badge from '@material-ui/core/Badge'
+import Box from '@material-ui/core/Box'
+import { deepOrange } from '@material-ui/core/colors'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Divider from '@material-ui/core/Divider'
+import Drawer from '@material-ui/core/Drawer'
+import Grid from '@material-ui/core/Grid'
+import IconButton from '@material-ui/core/IconButton'
+import InputBase from '@material-ui/core/InputBase'
+import Link from '@material-ui/core/Link'
+import { fade, makeStyles } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import Divider from '@material-ui/core/Divider'
-import IconButton from '@material-ui/core/IconButton'
-import Badge from '@material-ui/core/Badge'
-import Grid from '@material-ui/core/Grid'
-import Link from '@material-ui/core/Link'
-import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone'
+import MenuIcon from '@material-ui/icons/Menu'
 import NotificationsIcon from '@material-ui/icons/Notifications'
-import CustomerItems from './CustomerItems'
-import RetailerItems from './RetailerItems'
-import Avatar from '@material-ui/core/Avatar'
-import { deepOrange } from '@material-ui/core/colors'
-import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
+import ShoppingBasketTwoToneIcon from '@material-ui/icons/ShoppingBasketTwoTone'
+import clsx from 'clsx'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import CustomerItems from './CustomerItems'
+import Items from './data/items.json'
 import ItemCard from './ItemCard'
 import ItemDetails from './ItemDetails'
-import ExitToAppTwoToneIcon from '@material-ui/icons/ExitToAppTwoTone'
-import ShoppingBasketTwoToneIcon from '@material-ui/icons/ShoppingBasketTwoTone'
-import { useSelector } from 'react-redux'
-import Items from './data/items.json'
+import RetailerItems from './RetailerItems'
 
 function Copyright () {
   return (
@@ -175,8 +175,7 @@ const useStyles = makeStyles(theme => ({
 
 var currentCategory = ''
 
-export default function Dashboard () {
-
+export default function Dashboard (props) {
   let history = useHistory()
   const classes = useStyles()
 
@@ -196,7 +195,6 @@ export default function Dashboard () {
   }
 
   const handleCategory = event => {
-    console.log('Button Pressed')
     currentCategory = event.target.textContent
     setChangeItemCard(!changeItemCard)
   }
@@ -225,11 +223,12 @@ export default function Dashboard () {
   }
 
   function renderItemDetails (itemCard) {
-    const { id, name, img_src, description, price, category } = itemCard
+    const { id, name, img_src, description, price} = itemCard
     if (name === currentCard) {
       return (
         <ItemDetails
-          key={id} 
+          key={id}
+          productId={id}
           name={name}
           img={img_src}
           desc={description}
@@ -239,11 +238,11 @@ export default function Dashboard () {
     }
     return null
   }
-
-  var currentUser = useSelector(state => state.authReducer.name)
-  var profileImg = useSelector(state => state.authReducer.picture)
-
-  console.log(currentUser)
+  
+  let currentUser = useSelector(state => state.auth.name)
+  let profileImg = useSelector(state => state.auth.picture)
+  let userCart = useSelector(state => state.auth.cart)
+  
 
   return (
     <div className={classes.root}>
@@ -299,7 +298,7 @@ export default function Dashboard () {
           )}
           {currentUser && (
             <IconButton color='inherit' onClick={checkoutToCart}>
-              <Badge color='secondary'>
+              <Badge color='secondary' badgeContent={userCart.length}>
                 <ShoppingBasketTwoToneIcon />
               </Badge>
             </IconButton>
