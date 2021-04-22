@@ -116,15 +116,11 @@ const DividerWithText = ({ children }) => {
 export default function Login (props) {
   const classes = useStyles()
 
-  const handleSignUp = () => {
-    props.viewScreen(1)
-  }
-
-  const handleOTPVerification = () => {
-    props.viewScreen(2)
-  }
-
   return (
+    <Grid container component='main' className={classes.root}>
+      <CssBaseline />
+      <Grid item xs={false} sm={4} md={7} className={classes.image} />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
     <div className={classes.paper}>
       <Avatar className={classes.avatar}>
         <LockOutlinedIcon />
@@ -179,8 +175,7 @@ export default function Login (props) {
           variant='contained'
           color='primary'
           className={classes.submit}
-          // onCLick={handleOTPVerification}
-          href='/dashboard'
+          href='/verifyOTP'
         >
           Sign In
         </Button>
@@ -191,7 +186,7 @@ export default function Login (props) {
             </Link>
           </Grid>
           <Grid item>
-            <Link variant='body2' onClick={handleSignUp}>
+            <Link variant='body2' href='/signup'>
               {"Don't have an account? Sign Up"}
             </Link>
           </Grid>
@@ -207,5 +202,7 @@ export default function Login (props) {
         </Box>
       </form>
     </div>
+    </Grid>
+    </Grid>
   )
 }
