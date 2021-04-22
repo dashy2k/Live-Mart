@@ -1,5 +1,6 @@
 const express = require('express')
 const authRoutes = require('./routes/authRoutes')
+const signup = require('./routes/signup')
 const mongoose = require('mongoose')
 const keys = require('./config/keys')
 const cookieSession = require('cookie-session')
@@ -33,5 +34,6 @@ app.use(cors())
 
 authRoutes(app)
 addToCart(app)
+signup(app)
 
 app.listen(5000)

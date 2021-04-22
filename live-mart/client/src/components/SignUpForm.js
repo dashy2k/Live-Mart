@@ -17,7 +17,7 @@ import FormControl from '@material-ui/core/FormControl'
 import FormGroup from '@material-ui/core/FormGroup'
 import Paper from '@material-ui/core/Paper'
 
-function Copyright () {
+function Copyright() {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function SignUp (props) {
+export default function SignUp(props) {
   const classes = useStyles()
   const [state, setState] = React.useState({
     customer: true,
@@ -92,162 +92,163 @@ export default function SignUp (props) {
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-    <Container component='main' maxWidth='xs'>
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component='h1' variant='h5'>
-          Sign up
+        <Container component='main' maxWidth='xs'>
+          <CssBaseline />
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component='h1' variant='h5'>
+              Sign up
         </Typography>
-        <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete='fname'
-                name='firstName'
-                variant='outlined'
-                required
-                fullWidth
-                id='firstName'
-                label='First Name'
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant='outlined'
-                required
-                fullWidth
-                id='lastName'
-                label='Last Name'
-                name='lastName'
-                autoComplete='lname'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant='outlined'
-                required
-                fullWidth
-                id='email'
-                label='Email Address'
-                name='email'
-                autoComplete='email'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant='outlined'
-                required
-                fullWidth
-                name='password'
-                label='Password'
-                type='password'
-                id='password'
-                autoComplete='current-password'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant='outlined'
-                required
-                fullWidth
-                name='re-password'
-                label='Retype-Password'
-                type='password'
-                id='re-password'
-                autoComplete='current-password'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControl
-                component='fieldset'
-                className={classes.FormLabelclass}
-              >
-                <FormLabel component='legend'>Choose Role : </FormLabel>
-                <FormGroup row>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        checked={customer}
-                        onChange={handleChange}
-                        name='customer'
-                      />
-                    }
-                    label='Customer'
+            <form className={classes.form} action="http://localhost:5000/usersignup" method="post">
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    autoComplete='fname'
+                    name='firstName'
+                    variant='outlined'
+                    required
+                    fullWidth
+                    id='firstName'
+                    label='First Name'
+                    autoFocus
                   />
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        checked={retailer}
-                        onChange={handleChange}
-                        name='retailer'
-                      />
-                    }
-                    label='Retailer'
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    variant='outlined'
+                    required
+                    fullWidth
+                    id='lastName'
+                    label='Last Name'
+                    name='lastName'
+                    autoComplete='lname'
                   />
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        checked={wholesaler}
-                        onChange={handleChange}
-                        name='wholesaler'
-                      />
-                    }
-                    label='Wholesalers'
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    type='email'
+                    variant='outlined'
+                    required
+                    fullWidth
+                    id='email'
+                    label='Email Address'
+                    name='email'
+                    autoComplete='email'
                   />
-                </FormGroup>
-              </FormControl>
-            </Grid>
-            <Grid item xs={12}>
-              <FormLabel component='legend' className={classes.formControl}>
-                Location
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant='outlined'
+                    required
+                    fullWidth
+                    name='password'
+                    label='Password'
+                    type='password'
+                    id='password'
+                    autoComplete='current-password'
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant='outlined'
+                    required
+                    fullWidth
+                    name='re_password'
+                    label='Retype-Password'
+                    type='password'
+                    id='re_password'
+                    autoComplete='current-password'
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <FormControl
+                    component='fieldset'
+                    className={classes.FormLabelclass}
+                  >
+                    <FormLabel component='legend'>Choose Role : </FormLabel>
+                    <FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={customer}
+                            onChange={handleChange}
+                            name='customer'
+                          />
+                        }
+                        label='Customer'
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={retailer}
+                            onChange={handleChange}
+                            name='retailer'
+                          />
+                        }
+                        label='Retailer'
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={wholesaler}
+                            onChange={handleChange}
+                            name='wholesaler'
+                          />
+                        }
+                        label='Wholesalers'
+                      />
+                    </FormGroup>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12}>
+                  <FormLabel component='legend' className={classes.formControl}>
+                    Location
               </FormLabel>
-              <TextField
-                variant='outlined'
-                required
+                  <TextField
+                    variant='outlined'
+                    required
+                    fullWidth
+                    name='adress1'
+                    label='House No /Flat No / Floor'
+                    id='adress1'
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant='outlined'
+                    required
+                    fullWidth
+                    name='adress2'
+                    label='Society / Street Name'
+                    id='adress2'
+                  />
+                </Grid>
+              </Grid>
+              <Button
+                type='submit'
                 fullWidth
-                name='adress1'
-                label='House No /Flat No / Floor'
-                id='adress1'
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant='outlined'
-                required
-                fullWidth
-                name='adress2'
-                label='Society / Street Name'
-                id='adress2'
-              />
-            </Grid>
-          </Grid>
-          <Button
-            type='submit'
-            fullWidth
-            variant='contained'
-            color='primary'
-            className={classes.submit}
-          >
-            Sign Up
+                variant='contained'
+                color='primary'
+                className={classes.submit}
+              >
+                Sign Up
           </Button>
-          <Grid container justify='flex-end'>
-            <Grid item>
-              <Link variant='body2' href='/'>
-                Already have an account? Sign in
+              <Grid container justify='flex-end'>
+                <Grid item>
+                  <Link variant='body2' href='/'>
+                    Already have an account? Sign in
               </Link>
-            </Grid>
-          </Grid>
-        </form>
-      </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
-    </Container>
-    </Grid>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+          <Box mt={5}>
+            <Copyright />
+          </Box>
+        </Container>
+      </Grid>
     </Grid>
   )
 }
