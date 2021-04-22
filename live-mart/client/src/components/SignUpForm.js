@@ -128,6 +128,7 @@ export default function SignUp(props) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
+                    type='email'
                     variant='outlined'
                     required
                     fullWidth
@@ -154,10 +155,10 @@ export default function SignUp(props) {
                     variant='outlined'
                     required
                     fullWidth
-                    name='re-password'
+                    name='re_password'
                     label='Retype-Password'
                     type='password'
-                    id='re-password'
+                    id='re_password'
                     autoComplete='current-password'
                   />
                 </Grid>
