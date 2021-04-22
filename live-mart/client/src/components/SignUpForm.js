@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container'
 import FormLabel from '@material-ui/core/FormLabel'
 import FormControl from '@material-ui/core/FormControl'
 import FormGroup from '@material-ui/core/FormGroup'
+import Paper from '@material-ui/core/Paper'
 
 function Copyright () {
   return (
@@ -30,6 +31,20 @@ function Copyright () {
 }
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    height: '100vh',
+    display: 'flex'
+  },
+  image: {
+    backgroundImage: 'url(https://miro.medium.com/max/7914/0*rkDUK_3g6OhkCzX8)',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor:
+      theme.palette.type === 'light'
+        ? theme.palette.grey[50]
+        : theme.palette.grey[900],
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -49,9 +64,6 @@ const useStyles = makeStyles(theme => ({
   },
   signinbutton: {
     margin: theme.spacing(0, 0, 2)
-  },
-  root: {
-    display: 'flex'
   },
   formControl: {
     margin: theme.spacing(0, 0, 1)
@@ -75,11 +87,11 @@ export default function SignUp (props) {
 
   const { customer, retailer, wholesaler } = state
 
-  const handleSignIn = () => {
-    props.viewScreen(0)
-  }
-
   return (
+    <Grid container component='main' className={classes.root}>
+      <CssBaseline />
+      <Grid item xs={false} sm={4} md={7} className={classes.image} />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
     <Container component='main' maxWidth='xs'>
       <CssBaseline />
       <div className={classes.paper}>
@@ -224,7 +236,7 @@ export default function SignUp (props) {
           </Button>
           <Grid container justify='flex-end'>
             <Grid item>
-              <Link variant='body2' onCLick={handleSignIn}>
+              <Link variant='body2' href='/'>
                 Already have an account? Sign in
               </Link>
             </Grid>
@@ -235,5 +247,7 @@ export default function SignUp (props) {
         <Copyright />
       </Box>
     </Container>
+    </Grid>
+    </Grid>
   )
 }
