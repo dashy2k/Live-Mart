@@ -130,7 +130,7 @@ function Checkout () {
         <Toolbar>
           <Grid container>
                   <Button aria-label='like' className={classes.back} href='/dashboard'>
-                    <ArrowBackIcon/> Back To Live Mart
+                    <ArrowBackIcon/> Back To Store
                   </Button>
           </Grid>
         </Toolbar>

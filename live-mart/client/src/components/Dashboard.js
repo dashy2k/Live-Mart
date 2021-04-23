@@ -28,6 +28,7 @@ import Items from './data/items.json'
 import ItemCard from './ItemCard'
 import ItemDetails from './ItemDetails'
 import RetailerItems from './RetailerItems'
+import RetailerDashboard from './RetailerDashboard';
 
 function Copyright () {
   return (
@@ -187,6 +188,7 @@ export default function Dashboard (props) {
   const [open, setOpen] = React.useState(true)
   const [currentCard, setCurrentCard] = React.useState('')
   const [changeItemCard, setChangeItemCard] = React.useState(false)
+  const [showDashboard,setShowDashboard] = React.useState(true)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -202,10 +204,17 @@ export default function Dashboard (props) {
   const handleCategory = event => {
     currentCategory = event.target.textContent
     setChangeItemCard(!changeItemCard)
+    setShowDashboard(false)
   }
 
   const handleCurrentCard = event => {
     setCurrentCard(event.target.title)
+  }
+
+  const handleDashboard = () => {
+    currentCategory = ''
+    setCurrentCard('')
+    setShowDashboard(!showDashboard)
   }
 
   function addItemCard (itemCard) {
@@ -346,7 +355,7 @@ export default function Dashboard (props) {
         <Divider />
         <CustomerItems handleCategory={handleCategory} />
         <Divider />
-        <RetailerItems />
+        <RetailerItems handleDashboard={handleDashboard}/>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -356,6 +365,9 @@ export default function Dashboard (props) {
           </Grid>
           <Grid container xs={6} justify='center'>
             {Items.map(renderItemDetails)}
+          </Grid>
+          <Grid container xs={12} justify='center'>
+            {showDashboard && <RetailerDashboard/>}
           </Grid>
           <Box pt={4}>
             <Copyright />

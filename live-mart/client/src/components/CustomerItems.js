@@ -64,7 +64,7 @@ export default function CustomerItems(props) {
         <ListItemIcon>
           <HistoryIcon />
         </ListItemIcon>
-        <ListItemText primary='Your Previous Orders' />
+        <ListItemText primary='Your Previous Orders' onClick={props.handleOrders}/>
       </ListItem>
     </List>
   )

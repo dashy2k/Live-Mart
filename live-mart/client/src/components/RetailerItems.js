@@ -6,9 +6,12 @@ import ListSubheader from '@material-ui/core/ListSubheader'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import React from 'react'
 
-export default function ReatailerItems () {
-  
+export default function ReatailerItems (props) {
+  console.log('RetailerItems')
+  console.log(props)
+
   return (
+    <React.Fragment>
     <List
       subheader={
         <ListSubheader component='div' id='nested-list-subheader'>
@@ -16,12 +19,13 @@ export default function ReatailerItems () {
         </ListSubheader>
       }
     >
-      <ListItem button>
+      <ListItem button onClick={props.handleDashboard}>
         <ListItemIcon>
           <DashboardIcon />
         </ListItemIcon>
         <ListItemText primary='Dashboard' />
       </ListItem>
     </List>
+    </React.Fragment>
   )
 }

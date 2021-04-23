@@ -51,9 +51,6 @@ export default function Review (props) {
   const classes = useStyles()
   return (
     <React.Fragment>
-      <Typography variant='h6' gutterBottom>
-        Order summary
-      </Typography>
       <Card className={classes.root}>
         <CardMedia className={classes.cover} image={(props.img)} title='Tomatoes' />
         <div className={classes.details}>
