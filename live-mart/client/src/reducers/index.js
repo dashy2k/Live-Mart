@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
 import authReducer from './authReducer'
-import addToCartReducer from './addToCartReducer'
+import cartReducer from './cartReducer'
 
-export default combineReducers({auth : authReducer,addToCart : addToCartReducer})
+export default combineReducers({auth : authReducer,cart : cartReducer})

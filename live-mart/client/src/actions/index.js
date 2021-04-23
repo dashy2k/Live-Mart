@@ -2,7 +2,7 @@ import axios from 'axios'
 import { FETCH_USER, ADD_TO_CART } from './types'
 
 export const fetchUser = () => async dispatch => {
-  console.log('fetchUSerUsed')
+  console.log('fetchUserUsed')
   const res = await axios.get('/api/current_user')
 
   dispatch({ type: FETCH_USER, payload: res.data })
@@ -10,7 +10,7 @@ export const fetchUser = () => async dispatch => {
 
 export const addToCart = (productId,product,quantity,price,img) => async dispatch => {
   console.log('addToCartUsed')
-  const item = await axios
+  const res = await axios
     .get(
       '/api/current_user/actions/addToCart?productId=' +
         productId +
@@ -23,7 +23,7 @@ export const addToCart = (productId,product,quantity,price,img) => async dispatc
         '&img=' +
         encodeURI(img)
     )
-    .then(res => res.data)
 
-  dispatch({ type: ADD_TO_CART, payload: item })
+  dispatch({ type: ADD_TO_CART, payload: res.data })
+
 }

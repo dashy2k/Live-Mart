@@ -176,6 +176,11 @@ const useStyles = makeStyles(theme => ({
 var currentCategory = ''
 
 export default function Dashboard (props) {
+  
+  let currentUser = useSelector(state => state.auth.name)
+  let profileImg = useSelector(state => state.auth.picture)
+  let userCart = useSelector(state => state.auth.cart)
+
   let history = useHistory()
   const classes = useStyles()
 
@@ -239,11 +244,6 @@ export default function Dashboard (props) {
     return null
   }
   
-  let currentUser = useSelector(state => state.auth.name)
-  let profileImg = useSelector(state => state.auth.picture)
-  let userCart = useSelector(state => state.auth.cart)
-  
-
   return (
     <div className={classes.root}>
       <CssBaseline />

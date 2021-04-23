@@ -17,6 +17,8 @@ import AddressForm from './AddressForm'
 import OrderConfirmation from './OrderConfirmation'
 import PaymentForm from './PaymentForm'
 import Review from './ReviewItems'
+import { connect } from 'react-redux'
+import * as actions from '../actions'
 
 function Copyright () {
   return (
@@ -80,7 +82,6 @@ const steps = [
 ]
 
 function renderCartItems (items) {
-  console.log(typeof items.imgURL)
   return (
     <Review
       key={items.productId}
@@ -92,8 +93,10 @@ function renderCartItems (items) {
   )
 }
 
-export default function Checkout () {
+function Checkout () {
+
   let userCart = useSelector(state => state.auth.cart)
+  
   const classes = useStyles()
   const [activeStep, setActiveStep] = React.useState(0)
 
@@ -126,7 +129,7 @@ export default function Checkout () {
       <AppBar position='absolute' color='primary' className={classes.appBar}>
         <Toolbar>
           <Grid container>
-                  <Button aria-label='like' className={classes.back}>
+                  <Button aria-label='like' className={classes.back} href='/dashboard'>
                     <ArrowBackIcon/> Back To Live Mart
                   </Button>
           </Grid>
@@ -187,3 +190,5 @@ export default function Checkout () {
     </React.Fragment>
   )
 }
+
+export default connect(null, actions)(Checkout)

@@ -27,8 +27,4 @@ module.exports = app => {
     res.status(200).json(req.user)
   })
 
-  app.get('/api/current_user/history',(req,res)=> {
-    res.send({'PreviouslyOrdered' : req.user.orderHistory.length})
-  })
-
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -9,11 +9,10 @@ import SignIn from './SignInForm'
 import VerifyOTP from './VerifyOTP'
 import * as actions from '../actions'
 
-class App extends Component {
-  componentDidMount () {
-    this.props.fetchUser()
-  }
-  render () {
+function App(props){
+
+    props.fetchUser()
+
     return (
       <div className='container'>
         <BrowserRouter>
@@ -27,7 +26,6 @@ class App extends Component {
         </BrowserRouter>
       </div>
     )
-  }
 }
 
 export default connect(null, actions)(App)
