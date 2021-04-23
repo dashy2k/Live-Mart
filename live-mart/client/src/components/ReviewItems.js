@@ -49,7 +49,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Review (props) {
   const classes = useStyles()
-  console.log(props)
   return (
     <React.Fragment>
       <Typography variant='h6' gutterBottom>
