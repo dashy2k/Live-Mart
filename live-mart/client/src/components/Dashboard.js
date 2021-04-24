@@ -207,6 +207,7 @@ export default function Dashboard (props) {
     currentCategory = event.target.textContent
     setChangeItemCard(!changeItemCard)
     setShowDashboard(false)
+    setShowOrders(false)
   }
 
   const handleCurrentCard = event => {
@@ -219,7 +220,7 @@ export default function Dashboard (props) {
     setShowDashboard(!showDashboard)
   }
 
-  const handleOrders = (event) => {
+  const handleOrders = () => {
     console.log('Orders')
     currentCategory = ''
     setCurrentCard('')
@@ -379,7 +380,7 @@ export default function Dashboard (props) {
             {showDashboard && <RetailerDashboard/>}
           </Grid>
           <Grid container xs={12} justify='center'>
-            {!showOrders && <Orders/>}
+            {showOrders && <Orders/>}
           </Grid>
           <Box pt={4}>
             <Copyright />
