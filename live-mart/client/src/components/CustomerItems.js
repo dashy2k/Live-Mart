@@ -12,6 +12,8 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export default function CustomerItems(props) {
 
+  console.log(props)
+
   const useStyles = makeStyles(theme => ({
     root: {
       width: '100%',
@@ -28,6 +30,7 @@ export default function CustomerItems(props) {
   const handleClick = () => {
     setOpen(!open)
   }
+
 
   return (
     <List>
@@ -60,11 +63,11 @@ export default function CustomerItems(props) {
           </ListItem>
         </List>
       </Collapse>
-      <ListItem button>
+      <ListItem button onClick={props.handleOrders}>
         <ListItemIcon>
           <HistoryIcon />
         </ListItemIcon>
-        <ListItemText primary='Your Previous Orders' onClick={props.handleOrders}/>
+        <ListItemText primary='Your Previous Orders'/>
       </ListItem>
     </List>
   )

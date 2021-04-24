@@ -1,20 +1,22 @@
-import React from 'react'
-import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
-import Paper from '@material-ui/core/Paper'
 import Avatar from '@material-ui/core/Avatar'
+import Fab from '@material-ui/core/Fab'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import { makeStyles } from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TableContainer from '@material-ui/core/TableContainer'
 import TableRow from '@material-ui/core/TableRow'
-import TableBody from '@material-ui/core/TableBody'
-import Button from '@material-ui/core/Button'
-import EditIcon from '@material-ui/icons/Edit'
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
+import Typography from '@material-ui/core/Typography'
 import AccountBoxIcon from '@material-ui/icons/AccountBox'
-import BusinessIcon from '@material-ui/icons/Business';
-import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
+import BusinessIcon from '@material-ui/icons/Business'
+import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck'
+import StoreIcon from '@material-ui/icons/Store'
+import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle'
+import React, { useState } from 'react'
+import Inventory from './ManageInventory'
+import Orders from './ManageOrders'
 
 const useStyles = makeStyles(theme => ({
   table: {
@@ -41,6 +43,14 @@ const useStyles = makeStyles(theme => ({
   },
   btn: {
     margin: theme.spacing(2)
+  },
+  root: {
+    '& > *': {
+      margin: theme.spacing(1)
+    }
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1)
   }
 }))
 
@@ -54,31 +64,31 @@ function BasicTable () {
           <TableRow>
             <TableCell component='th' scope='row' align='center'>
               <Typography color='textPrimary' variant='h7'>
-                <AccountBoxIcon style={{fontSize : 30}}/>
+                <AccountBoxIcon style={{ fontSize: 30 }} />
               </Typography>
             </TableCell>
             <TableCell align='center'>
               <Typography color='textSecondary' variant='h7'>
-               Fresho
+                Fresho
               </Typography>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell component='th' scope='row' align='center'>
               <Typography color='textPrimary' variant='h7'>
-                <BusinessIcon style={{fontSize : 30}}/>
+                <BusinessIcon style={{ fontSize: 30 }} />
               </Typography>
             </TableCell>
             <TableCell align='center'>
               <Typography color='textSecondary' variant='h7'>
-              Level 4, 20 Farringdon St, Farringdon, London EC4A 4EN, UK
+                Level 4, 20 Farringdon St, Farringdon, London EC4A 4EN, UK
               </Typography>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell component='th' scope='row' align='center'>
               <Typography color='textPrimary' variant='h7'>
-                <SupervisedUserCircleIcon style={{fontSize : 30}}/>
+                <SupervisedUserCircleIcon style={{ fontSize: 30 }} />
               </Typography>
             </TableCell>
             <TableCell align='center'>
@@ -96,10 +106,27 @@ function BasicTable () {
 export default function RetailerDashboard () {
   const classes = useStyles()
 
+  const [showStores, setShowStores] = useState(false)
+  const [showOrders, setShowOrders] = useState(false)
+
+  const handleDelete = () => {
+    console.info('You clicked the delete icon.')
+  }
+
+  const handleStores = () => {
+    setShowStores(!showStores)
+    setShowOrders(false)
+  }
+
+  const handleOrders = () => {
+    setShowOrders(!showOrders)
+    setShowStores(false)
+  }
+
   return (
     <React.Fragment>
       <Grid container>
-        <Grid item xs={12} className={classes.dataBox}>
+        <Grid container xs={12} className={classes.dataBox}>
           <Grid container justify='center' xs={6}>
             <Avatar
               alt='fresho'
@@ -109,29 +136,35 @@ export default function RetailerDashboard () {
               className={classes.retailerDP}
             />
           </Grid>
-          <Grid container justify='center' xs={6}>{BasicTable()}</Grid>
+          <Grid container justify='center' xs={6}>
+            {BasicTable()}
+          </Grid>
         </Grid>
-        <Grid item className={classes.leafHeader} xs={12}>
-          <Paper elevation={1} />
-          <Typography variant='h7'>ACTIONS</Typography>
-        </Grid>
-        <Grid item xs={12} className={classes.dataBox}>
-          <Button
-            className={classes.btn}
-            variant='contained'
+        <Grid container xs={12} className={classes.dataBox} justify='flex-end'>
+          <Fab
             color='primary'
-            endIcon={<EditIcon />}
-          >
-            Edit details
-          </Button>
-          <Button
-            variant='contained'
-            color='primary'
+            aria-label='add'
+            variant='extended'
+            onClick={handleStores}
             className={classes.btn}
-            endIcon={<AddCircleOutlineIcon />}
           >
-            List New Items
-          </Button>
+            <PlaylistAddCheckIcon className={classes.extendedIcon} />
+            Manage Inventory
+          </Fab>
+          <Fab
+            color='primary'
+            aria-label='add'
+            variant='extended'
+            onClick={handleOrders}
+            className={classes.btn}
+          >
+            <StoreIcon className={classes.extendedIcon} />
+            Manage Orders
+          </Fab>
+          <Grid container flex='center'>
+            {showStores && <Inventory />}
+            {showOrders && <Orders />}
+          </Grid>
         </Grid>
       </Grid>
     </React.Fragment>

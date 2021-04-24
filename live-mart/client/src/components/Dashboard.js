@@ -29,6 +29,7 @@ import ItemCard from './ItemCard'
 import ItemDetails from './ItemDetails'
 import RetailerItems from './RetailerItems'
 import RetailerDashboard from './RetailerDashboard';
+import Orders from './OrderDetails'
 
 function Copyright () {
   return (
@@ -188,7 +189,8 @@ export default function Dashboard (props) {
   const [open, setOpen] = React.useState(true)
   const [currentCard, setCurrentCard] = React.useState('')
   const [changeItemCard, setChangeItemCard] = React.useState(false)
-  const [showDashboard,setShowDashboard] = React.useState(true)
+  const [showDashboard,setShowDashboard] = React.useState(false)
+  const [showOrders,setShowOrders] = React.useState(false)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -215,6 +217,13 @@ export default function Dashboard (props) {
     currentCategory = ''
     setCurrentCard('')
     setShowDashboard(!showDashboard)
+  }
+
+  const handleOrders = (event) => {
+    console.log('Orders')
+    currentCategory = ''
+    setCurrentCard('')
+    setShowOrders(!showOrders)
   }
 
   function addItemCard (itemCard) {
@@ -353,7 +362,7 @@ export default function Dashboard (props) {
           </IconButton>
         </div>
         <Divider />
-        <CustomerItems handleCategory={handleCategory} />
+        <CustomerItems handleCategory={handleCategory} handleOrders={handleOrders}/>
         <Divider />
         <RetailerItems handleDashboard={handleDashboard}/>
       </Drawer>
@@ -368,6 +377,9 @@ export default function Dashboard (props) {
           </Grid>
           <Grid container xs={12} justify='center'>
             {showDashboard && <RetailerDashboard/>}
+          </Grid>
+          <Grid container xs={12} justify='center'>
+            {!showOrders && <Orders/>}
           </Grid>
           <Box pt={4}>
             <Copyright />
