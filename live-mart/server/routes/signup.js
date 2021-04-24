@@ -5,11 +5,9 @@ const bodyParser = require('body-parser');
 
 module.exports = app => {
     app.use(bodyParser.urlencoded({ extended: true }));
-
     app.post('/usersignup', (req, res) => {
-        //console.log(req.body);
         if (req.body.password != req.body.re_password) {
-            res.send("<p>Passwords do not match</p> < br /> < form method = 'get' action = 'http://localhost:3000/signup' > < button type = 'submit' > Go Back and try again</button > </form>")
+            res.send("<p>Passwords do not match</p>")
         }
         else {
             const userDetails = new User({
