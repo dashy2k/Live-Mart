@@ -74,6 +74,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function SignUp(props) {
+
   const classes = useStyles()
   const [state, setState] = React.useState({
     customer: true,
@@ -210,9 +211,9 @@ export default function SignUp(props) {
                     variant='outlined'
                     required
                     fullWidth
-                    name='adress1'
+                    name='address1'
                     label='House No /Flat No / Floor'
-                    id='adress1'
+                    id='address1'
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -220,12 +221,13 @@ export default function SignUp(props) {
                     variant='outlined'
                     required
                     fullWidth
-                    name='adress2'
+                    name='address2'
                     label='Society / Street Name'
-                    id='adress2'
+                    id='address2'
                   />
                 </Grid>
               </Grid>
+              {/* <p color='red' > {status === 1 ? null : 'Passwords do not match'} </p> */}
               <Button
                 type='submit'
                 fullWidth
