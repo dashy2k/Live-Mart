@@ -317,7 +317,7 @@ export default function Dashboard (props) {
           )}
           {currentUser && (
             <IconButton color='inherit' onClick={checkoutToCart}>
-              <Badge color='secondary' badgeContent={userCart.length}>
+              <Badge color='secondary' badgeContent={userCart.length} variant="dot">
                 <ShoppingBasketTwoToneIcon />
               </Badge>
             </IconButton>

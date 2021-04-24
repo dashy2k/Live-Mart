@@ -18,7 +18,7 @@ import RemoveIcon from '@material-ui/icons/Remove'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import React from 'react'
 import ReactStars from 'react-rating-stars-component'
-import { connect } from 'react-redux'
+import { connect,useSelector } from 'react-redux'
 import * as actions from '../actions'
 
 const useStyles = makeStyles(theme => ({
@@ -91,6 +91,8 @@ function ItemDetails (props) {
     props.addToCart(props.productId, props.name, itemQuantity,props.price,props.img)
   }
 
+  const user = useSelector(state => state.auth)
+
   return (
     <Paper elevation={3} className={classes.root}>
       <Grid container direction='row'>
@@ -146,7 +148,7 @@ function ItemDetails (props) {
                 <Divider />
               </React.Fragment>
             )}
-            <Grid container className={classes.floatButtons} justify='center'>
+            {user && <Grid container className={classes.floatButtons} justify='center'>
               <Fab
                 color='primary'
                 aria-label='remove'
@@ -172,7 +174,7 @@ function ItemDetails (props) {
               >
                 <ShoppingBasketIcon />
               </Fab>
-            </Grid>
+            </Grid>}
           </div>
         </Grid>
       </Grid>
