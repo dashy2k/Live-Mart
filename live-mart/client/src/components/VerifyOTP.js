@@ -5,11 +5,11 @@ import TextField from '@material-ui/core/TextField'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
-import SendIcon from '@material-ui/icons/Send';
+import SendIcon from '@material-ui/icons/Send'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import { Link } from '@material-ui/core'
 import LockIcon from '@material-ui/icons/LockOpenRounded'
-import {Grid,CssBaseline,Paper} from '@material-ui/core'
+import { Grid, CssBaseline, Paper } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -99,62 +99,77 @@ function Copyright () {
 
 export default function VerifyOTP () {
   const classes = useStyles()
+
+  const [verify, setVerify] = React.useState(false)
+
+  const [sendDisabled,setSendDisabled] = React.useState(false)
+
+  const handleChange = event => {
+    if (event.target.value.length === 6) {
+      setVerify(true)
+    }
+  }
+
   return (
     <Grid container component='main' className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <SendIcon />
-        </Avatar>
-        <Typography component='h1' variant='body2' color='textSecondary'>
-          {'We have sent you an OTP on your email Address'}
-        </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position='start'>
-                  <LockIcon />
-                </InputAdornment>
-              )
-            }}
-            variant='outlined'
-            margin='normal'
-            required
-            fullWidth
-            name='OTP'
-            label='OTP'
-            type='password'
-            id='otp'
-          />
-          <Button
-            type='submit'
-            fullWidth
-            href='/dashboard'
-            variant='contained'
-            color='primary'
-            className={classes.submit}
-          >
-            Verify OTP
-          </Button>
-          <Button
-            type='submit'
-            fullWidth
-            href='/dashboard'
-            variant='contained'
-            color='primary'
-            className={classes.submit}
-          >
-            Verify OTP
-          </Button>
-          <Box mt={5}>
-            <Copyright />
-          </Box>
-        </form>
-      </div>
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <SendIcon />
+          </Avatar>
+          <Typography component='h1' variant='body2' color='textSecondary'>
+            {'We have sent you an OTP on your email Address'}
+          </Typography>
+          <form className={classes.form} noValidate>
+            <TextField
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position='start'>
+                    <LockIcon />
+                  </InputAdornment>
+                )
+              }}
+              variant='outlined'
+              margin='normal'
+              required
+              fullWidth
+              name='OTP'
+              label='OTP'
+              type='password'
+              id='otp'
+              error={!verify}
+              onChange={handleChange}
+              helperText={'Invalid OTP'}
+            />
+            <Button
+              type='submit'
+              fullWidth
+              disabled={!verify}
+              href='/dashboard'
+              variant='contained'
+              color='primary'
+              className={classes.submit}
+            >
+              Verify OTP
+            </Button>
+            <Button
+              fullWidth
+              variant='contained'
+              color='primary'
+              className={classes.submit}
+              disabled={sendDisabled}
+              onClick={() => setSendDisabled(!sendDisabled)}
+            >
+              Send OTP
+            </Button>
+            <Box mt={5}>
+              <Copyright />
+            </Box>
+          </form>
+        </div>
       </Grid>
-      </Grid>
+    </Grid>
   )
 }

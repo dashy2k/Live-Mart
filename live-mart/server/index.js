@@ -23,6 +23,10 @@ mongoose.connect(keys.mongoURI, {
 
 const app = express()
 
+const authenticator = require('otplib').totp
+const secret = 'KVKFKRCPNZQUYMLXOVYDSQKJKZDTSRLD'
+const token = authenticator.generate(secret)
+
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -42,6 +46,7 @@ addToCart(app)
 signIn(app)
 signup(app)
 Checkout(app)
-OTPMailer(app)
+
+OTPMailer(token)
 
 app.listen(5000)
