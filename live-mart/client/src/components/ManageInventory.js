@@ -14,6 +14,7 @@ import AddIcon from '@material-ui/icons/Add'
 import DeleteIcon from '@material-ui/icons/Delete'
 import FolderIcon from '@material-ui/icons/Folder'
 import React from 'react'
+import Items from './data/items.json';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,15 +29,38 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function generate (element) {
+function generate(element) {
   return [0, 1, 2].map(value =>
     React.cloneElement(element, {
       key: value
     })
   )
 }
+function addRetailerItems(items) {
 
-export default function RenderInventory () {
+  return (<ListItem>
+
+    <ListItemAvatar>
+      <Avatar src={items.img_src}>
+        A
+      </Avatar>
+
+
+    </ListItemAvatar>
+    <ListItemText
+      primary={items.name}
+      secondary={"₹" + items.price + "     Qty: " + items.qty}
+    />
+    <ListItemSecondaryAction>
+      <IconButton edge='end' aria-label='delete'>
+        <DeleteIcon />
+      </IconButton>
+    </ListItemSecondaryAction>
+  </ListItem>)
+}
+
+
+export default function RenderInventory() {
   const classes = useStyles()
   const [secondary, setSecondary] = React.useState(false)
 
@@ -50,24 +74,9 @@ export default function RenderInventory () {
             </Typography>
             <div className={classes.demo}>
               <List>
-                {generate(
-                  <ListItem>
-                    <ListItemAvatar>
-                      <Avatar>
-                        <FolderIcon />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary='Single-line item'
-                      secondary={secondary ? 'Secondary text' : null}
-                    />
-                    <ListItemSecondaryAction>
-                      <IconButton edge='end' aria-label='delete'>
-                        <DeleteIcon />
-                      </IconButton>
-                    </ListItemSecondaryAction>
-                  </ListItem>
-                )}
+
+                {Items.map(addRetailerItems)}
+
               </List>
             </div>
           </Grid>

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function generate (element) {
+function generate(element) {
   return [0, 1, 2].map(value =>
     React.cloneElement(element, {
       key: value
@@ -30,7 +30,7 @@ function generate (element) {
   )
 }
 
-export default function Inventory () {
+export default function Inventory() {
   const classes = useStyles()
   const [dense, setDense] = React.useState(false)
   const [secondary, setSecondary] = React.useState(false)
@@ -45,19 +45,41 @@ export default function Inventory () {
             </Typography>
             <div className={classes.demo}>
               <List>
-                {generate(
-                  <ListItem>
-                    <ListItemAvatar>
-                      <Avatar>
-                        <ReceiptIcon />
-                      </Avatar>
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary='Single-line item'
-                      secondary={secondary ? 'Secondary text' : null}
-                    />
-                  </ListItem>
-                )}
+
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ReceiptIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary='Order #999'
+                    secondary='Mr. Nachiket Karkera;         Bill Amount:₹22500'
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ReceiptIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary='Order #998'
+                    secondary='Mr. Ayushdeep;         Bill Amount:₹10000'
+                  />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ReceiptIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary='Order #997'
+                    secondary='Mr. Suparth Grover;         Bill Amount:₹10900'
+                  />
+                </ListItem>
+
               </List>
             </div>
           </Grid>
