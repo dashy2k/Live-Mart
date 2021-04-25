@@ -7,8 +7,6 @@ module.exports = app => {
       console.log(err)
       let duplicateItem = false
 
-      console.log(userInfo)
-
       userInfo.cart.forEach(item => {
         if (item.productId == req.query.productId) {
           duplicateItem = true

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_USER, ADD_TO_CART } from './types'
+import { FETCH_USER, ADD_TO_CART,CHECKOUT } from './types'
 
 export const fetchUser = () => async dispatch => {
   console.log('fetchUserUsed')
@@ -8,22 +8,33 @@ export const fetchUser = () => async dispatch => {
   dispatch({ type: FETCH_USER, payload: res.data })
 }
 
-export const addToCart = (productId,product,quantity,price,img) => async dispatch => {
+export const addToCart = (
+  productId,
+  product,
+  quantity,
+  price,
+  img
+) => async dispatch => {
   console.log('addToCartUsed')
-  const res = await axios
-    .get(
-      '/api/current_user/actions/addToCart?productId=' +
-        productId +
-        '&product=' +
-        product +
-        '&quantity=' +
-        quantity +
-        '&price=' +
-        price +
-        '&img=' +
-        encodeURI(img)
-    )
+  const res = await axios.get(
+    '/api/current_user/actions/addToCart?productId=' +
+      productId +
+      '&product=' +
+      product +
+      '&quantity=' +
+      quantity +
+      '&price=' +
+      price +
+      '&img=' +
+      encodeURI(img)
+  )
 
   dispatch({ type: ADD_TO_CART, payload: res.data })
+}
 
+export const checkout = userId => async dispatch => {
+  
+  const res = await axios.get('/api/current_user/actions/checkoutSucess?userId=' + userId)
+
+  dispatch({ type: CHECKOUT, payload: res.data })
 }

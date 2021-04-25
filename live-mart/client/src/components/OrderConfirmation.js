@@ -3,22 +3,20 @@ import Button from '@material-ui/core/Button'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { Grid } from '@material-ui/core/'
-import Typography from '@material-ui/core/Typography'
 import { useHistory } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles'
+import * as actions from '../actions'
+import { connect, useSelector } from 'react-redux'
 
 function Alert (props) {
   return <MuiAlert elevation={6} variant='filled' {...props} />
 }
 
-const useStyles = makeStyles(theme => ({
-  row : {
-    margin : theme.spacing(2)
-  }
-}))
+function OrderConfirmation (props) {
+  console.log(props)
 
-export default function PositionedSnackbar () {
-  const classes = useStyles()
+  const userId = useSelector(state => state.auth._id)
+
   const [showTracker, setShowTracker] = React.useState(false)
   const [state, setState] = React.useState({
     open: false,
@@ -39,8 +37,9 @@ export default function PositionedSnackbar () {
     setState({ ...state, open: false })
   }
 
-  const handleTracking = () => {
-    history.push('/orders')
+  const handleCheckout = () => {
+    props.checkout(userId)
+    history.push('/dashboard')
   }
 
   const buttons = (
@@ -74,13 +73,10 @@ export default function PositionedSnackbar () {
         </Alert>
       </Snackbar>
       <Grid container justify='center'>
-        <Grid container justify='center' className={classes.row}>
-          {showTracker && <Typography>Your Order Number is : 20030</Typography>}
-        </Grid>
         <Grid container justify='center'>
           {showTracker && (
-            <Button variant='outlined' color='primary' onClick={handleTracking}>
-              Track Order
+            <Button variant='outlined' color='primary' onClick={handleCheckout}>
+              Checkout Successfully
             </Button>
           )}
         </Grid>
@@ -88,3 +84,5 @@ export default function PositionedSnackbar () {
     </div>
   )
 }
+
+export default connect(null, actions)(OrderConfirmation)

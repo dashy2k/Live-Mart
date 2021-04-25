@@ -6,10 +6,12 @@ const keys = require('./config/keys')
 const cookieSession = require('cookie-session')
 const passport = require('passport')
 const cors = require('cors')
+
 require('./models/User')
 require('./services/passport')
-const addToCart = require('./services/addToCartService')
 
+const addToCart = require('./services/addToCartService')
+const Checkout = require('./services/userHistory')
 
 
 mongoose.connect(keys.mongoURI, {
@@ -35,5 +37,6 @@ app.use(cors())
 authRoutes(app)
 addToCart(app)
 signup(app)
+Checkout(app)
 
 app.listen(5000)

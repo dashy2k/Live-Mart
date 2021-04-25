@@ -16,6 +16,7 @@ import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import LibraryAddCheckIcon from '@material-ui/icons/LibraryAddCheck'
 import AdjustIcon from '@material-ui/icons/Adjust'
+import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -63,6 +64,8 @@ export default function SimpleList () {
   const [activeStep, setActiveStep] = React.useState(0)
   const steps = getSteps()
 
+  const userHistory = useSelector(state => state.auth.orderHistory)
+
   const handleClick = () => {
     setOpen(!open)
   }
@@ -90,21 +93,18 @@ export default function SimpleList () {
         </ListItem>
       </List>
       <Divider />
-      <List component='nav' aria-label='secondary mailbox folders'>
+      {userHistory.map((cart) => (<List>
         <ListItem>
           <ListItemIcon>
             <AdjustIcon />
           </ListItemIcon>
-          <ListItemText primary='Order ID : 20030' />
+          <ListItemText primary={'Order ID :'+ cart.orderId} />
         </ListItem>
         <ListItem>
           <ListItemText secondary='Delivery Agent : Ramesh' />
         </ListItem>
         <ListItem>
           <ListItemText secondary='Contact Details : 9488123306' />
-        </ListItem>
-        <ListItem>
-          <ListItemText secondary='Address : Vidya Vihar, Pilani, Rajasthan 333031' />
         </ListItem>
         <Stepper
           activeStep={activeStep}
@@ -147,15 +147,16 @@ export default function SimpleList () {
             </Button>
           </Paper>
         )}
-        <Divider />
-        <List>
-          <ListItem button>
-            <ListItemIcon>
-              <LibraryAddCheckIcon />
-            </ListItemIcon>
-            <ListItemText primary='Delivered' />
-          </ListItem>
-        </List>
+      </List>))}
+
+      <Divider />
+      <List>
+        <ListItem button>
+          <ListItemIcon>
+            <LibraryAddCheckIcon />
+          </ListItemIcon>
+          <ListItemText primary='Delivered' />
+        </ListItem>
       </List>
       <Divider />
       <List>

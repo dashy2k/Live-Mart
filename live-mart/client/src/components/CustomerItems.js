@@ -3,14 +3,16 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import CategoryIcon from '@material-ui/icons/Category'
-import HistoryIcon from '@material-ui/icons/History';
+import HistoryIcon from '@material-ui/icons/History'
 import Collapse from '@material-ui/core/Collapse'
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import List from '@material-ui/core/List'
 import { makeStyles } from '@material-ui/core/styles'
+import { useSelector } from 'react-redux'
 
-export default function CustomerItems(props) {
+export default function CustomerItems (props) {
+  const user = useSelector(state => state.auth)
 
   console.log(props)
 
@@ -21,7 +23,7 @@ export default function CustomerItems(props) {
       backgroundColor: theme.palette.background.paper
     },
     nested: {
-      paddingLeft: theme.spacing(4),
+      paddingLeft: theme.spacing(4)
     }
   }))
   const classes = useStyles()
@@ -30,7 +32,6 @@ export default function CustomerItems(props) {
   const handleClick = () => {
     setOpen(!open)
   }
-
 
   return (
     <List>
@@ -42,35 +43,59 @@ export default function CustomerItems(props) {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout='auto' unmountOnExit>
-        <List component='div' disablePadding >
-          <ListItem button className={classes.nested} onClick={props.handleCategory}>
+        <List component='div' disablePadding>
+          <ListItem
+            button
+            className={classes.nested}
+            onClick={props.handleCategory}
+          >
             <ListItemText secondary='Fruits & Vegetables' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={props.handleCategory}>
+          <ListItem
+            button
+            className={classes.nested}
+            onClick={props.handleCategory}
+          >
             <ListItemText secondary='Foodgrains,Oils & Masala' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={props.handleCategory}>
+          <ListItem
+            button
+            className={classes.nested}
+            onClick={props.handleCategory}
+          >
             <ListItemText secondary='Bakery,Cakes & Dairy' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={props.handleCategory}>
+          <ListItem
+            button
+            className={classes.nested}
+            onClick={props.handleCategory}
+          >
             <ListItemText secondary='Beverages' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={props.handleCategory}>
+          <ListItem
+            button
+            className={classes.nested}
+            onClick={props.handleCategory}
+          >
             <ListItemText secondary='Snack & Branded Food' />
           </ListItem>
-          <ListItem button className={classes.nested} onClick={props.handleCategory}>
+          <ListItem
+            button
+            className={classes.nested}
+            onClick={props.handleCategory}
+          >
             <ListItemText secondary='Eggs,Meat & Fish' />
           </ListItem>
         </List>
       </Collapse>
-      <ListItem button onClick={props.handleOrders}>
-        <ListItemIcon>
-          <HistoryIcon />
-        </ListItemIcon>
-        <ListItemText primary='Your Previous Orders'/>
-      </ListItem>
+      {user && (
+        <ListItem button onClick={props.handleOrders}>
+          <ListItemIcon>
+            <HistoryIcon />
+          </ListItemIcon>
+          <ListItemText primary='Your Previous Orders' />
+        </ListItem>
+      )}
     </List>
   )
-
 }
-

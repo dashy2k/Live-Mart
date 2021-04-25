@@ -18,7 +18,7 @@ import RemoveIcon from '@material-ui/icons/Remove'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import React from 'react'
 import ReactStars from 'react-rating-stars-component'
-import { connect } from 'react-redux'
+import { connect,useSelector } from 'react-redux'
 import * as actions from '../actions'
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Collapse from '@material-ui/core/Collapse';
@@ -128,6 +128,8 @@ function ItemDetails(props) {
     event.target.parentElement.style.backgroundColor ='#d8e3e7'
   }
 
+  const user = useSelector(state => state.auth)
+
   return (
     <Paper elevation={3} className={classes.root}>
       <Grid container direction='row'>
@@ -226,7 +228,7 @@ function ItemDetails(props) {
                 <Divider />
               </React.Fragment>
             )}
-            <Grid container className={classes.floatButtons} justify='center'>
+            {user && <Grid container className={classes.floatButtons} justify='center'>
               <Fab
                 color='primary'
                 aria-label='remove'
@@ -252,7 +254,7 @@ function ItemDetails(props) {
               >
                 <ShoppingBasketIcon />
               </Fab>
-            </Grid>
+            </Grid>}
           </div>
         </Grid>
       </Grid>
