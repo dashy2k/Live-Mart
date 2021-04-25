@@ -247,7 +247,7 @@ export default function Dashboard (props) {
   }
 
   function renderItemDetails (itemCard) {
-    const { id, name, img_src, description, price} = itemCard
+    const { id, name, img_src, description, price, retailers} = itemCard
     if (name === currentCard) {
       return (
         <ItemDetails
@@ -257,6 +257,7 @@ export default function Dashboard (props) {
           img={img_src}
           desc={description}
           price={price}
+          retailers={retailers}
         />
       )
     }
