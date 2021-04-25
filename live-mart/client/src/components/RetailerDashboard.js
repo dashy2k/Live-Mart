@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function BasicTable () {
+function BasicTable() {
   const classes = useStyles()
 
   return (
@@ -81,7 +81,7 @@ function BasicTable () {
             </TableCell>
             <TableCell align='center'>
               <Typography color='textSecondary' variant='h7'>
-                Level 4, 20 Farringdon St, Farringdon, London EC4A 4EN, UK
+                Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra
               </Typography>
             </TableCell>
           </TableRow>
@@ -103,7 +103,7 @@ function BasicTable () {
   )
 }
 
-export default function RetailerDashboard () {
+export default function RetailerDashboard() {
   const classes = useStyles()
 
   const [showStores, setShowStores] = useState(false)

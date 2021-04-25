@@ -5,23 +5,28 @@
         "img_src": "https://s3.india.com/wp-content/uploads/2020/08/red-onion.jpg",
         "description": "Fruits & Vegetables",
         "price": 35,
+        "qty": 650,
         "category": "Fruits & Vegetables",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Nobel Stores",
-                "distance" : "2.16 km"
+                "name": "Nobel Stores",
+                "address": "Shop Number 9, Orchid Suburban, Ptc Building, New Link Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "2.16 km"
             }
         ]
     },
@@ -31,23 +36,28 @@
         "img_src": "https://static.libertyprim.com/files/familles/pomme-large.jpg?1569271834",
         "description": "Fruits & Vegetables",
         "price": 35,
+        "qty": 500,
         "category": "Fruits & Vegetables",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Nobel Stores",
-                "distance" : "2.16 km"
+                "name": "Nobel Stores",
+                "address": "Shop Number 9, Orchid Suburban, Ptc Building, New Link Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "2.16 km"
             }
         ]
     },
@@ -57,23 +67,28 @@
         "img_src": "https://www.jiomart.com/images/product/600x600/590003516/potato-per-kg-0-20200710.jpg",
         "description": "Fruits & Vegetables",
         "price": 20,
+        "qty": 650,
         "category": "Fruits & Vegetables",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Nobel Stores",
-                "distance" : "2.16 km"
+                "name": "Nobel Stores",
+                "address": "Shop Number 9, Orchid Suburban, Ptc Building, New Link Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "2.16 km"
             }
         ]
     },
@@ -83,23 +98,28 @@
         "img_src": "https://plantogram.com/wa-data/public/shop/products/55/06/655/images/1256/1256.750@2x.jpg",
         "description": "Fruits & Vegetables",
         "price": 50,
+        "qty": 750,
         "category": "Fruits & Vegetables",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Nobel Stores",
-                "distance" : "2.16 km"
+                "name": "Nobel Stores",
+                "address": "Shop Number 9, Orchid Suburban, Ptc Building, New Link Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "2.16 km"
             }
         ]
     },
@@ -109,23 +129,28 @@
         "img_src": "https://4.imimg.com/data4/RP/LP/IMOB-36748430/img_20170406_170825-500x500.jpg",
         "description": "Fruits & Vegetables",
         "price": 2,
+        "qty": 900,
         "category": "Fruits & Vegetables",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Nobel Stores",
-                "distance" : "2.16 km"
+                "name": "Nobel Stores",
+                "address": "Shop Number 9, Orchid Suburban, Ptc Building, New Link Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "2.16 km"
             }
         ]
     },
@@ -135,23 +160,28 @@
         "img_src": "https://5.imimg.com/data5/AB/ER/MY-8583111/lichies-500x500.png",
         "description": "Fruits & Vegetables",
         "price": 20,
+        "qty": 800,
         "category": "Fruits & Vegetables",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Nobel Stores",
-                "distance" : "2.16 km"
+                "name": "Nobel Stores",
+                "address": "Shop Number 9, Orchid Suburban, Ptc Building, New Link Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "2.16 km"
             }
         ]
     },
@@ -161,23 +191,28 @@
         "img_src": "https://images-na.ssl-images-amazon.com/images/I/61KqD6xBtoL._SL1500_.jpg",
         "description": "Foodgrains,Oils & Masala",
         "price": 140,
+        "qty": 2300,
         "category": "Foodgrains,Oils & Masala",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     },
@@ -187,23 +222,28 @@
         "img_src": "https://5.imimg.com/data5/HQ/KR/MY-5477230/toor-dal-500x500.jpg",
         "description": "Foodgrains,Oils & Masala",
         "price": 40,
+        "qty": 6500,
         "category": "Foodgrains,Oils & Masala",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     },
@@ -213,23 +253,28 @@
         "img_src": "https://5.imimg.com/data5/SV/PM/MY-35858390/roasted-garam-masala-500x500.jpg",
         "description": "Foodgrains,Oils & Masala",
         "price": 100,
+        "qty": 1500,
         "category": "Foodgrains,Oils & Masala",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     },
@@ -239,23 +284,28 @@
         "img_src": "https://choosemychoice.com/wp-content/uploads/2020/05/274148_11-fortune-sunflower-refined-oil.jpg",
         "description": "Foodgrains,Oils & Masala",
         "price": 130,
+        "qty": 2500,
         "category": "Foodgrains,Oils & Masala",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     },
@@ -264,24 +314,29 @@
         "name": "Masoor Dal",
         "img_src": "https://images-na.ssl-images-amazon.com/images/I/614JpSxmkbL._SX679_.jpg",
         "description": "Foodgrains,Oils & Masala",
-        "price": 140,
+        "price": 60,
+        "qty": 7700,
         "category": "Foodgrains,Oils & Masala",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     },
@@ -291,23 +346,28 @@
         "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNy-6y9Z8Wh22cpBCWPbWVWKRC0QLuWE3ufg&usqp=CAU",
         "description": "Bakery,Cakes & Dairy",
         "price": 30,
+        "qty": 800,
         "category": "Bakery,Cakes & Dairy",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Shah Dairy",
-                "distance" : "1.60 km"
+                "name": "Shah Dairy",
+                "address": "Shop No 6, Raj Arcade, opposite Anagan Hall, Mahavir Nagar, Panchsheel Garden, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.60 km"
             },
             {
-                "name" : "The Pastry Shop",
-                "distance" : "2.47 km"
+                "name": "The Pastry Shop",
+                "address": "Shop No 3, Bldg. No 40, Sargam Society, Oshiwara, Mhada Colony, Andheri West, Mumbai, Maharashtra",
+                "distance": "2.47 km"
             },
             {
-                "name" : "Kumar Milk Centre",
-                "distance" : "4.81 km"
+                "name": "Kumar Milk Centre",
+                "address": "Mahavir Nagar, V Souk, opposite Kamla Sports Club, Sector 10, Kandivali West, Mumbai, Maharashtra",
+                "distance": "4.81 km"
             }
         ]
     },
@@ -317,23 +377,28 @@
         "img_src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPEW1JY5RAywsO8ey562LaC5DnwK-Q_1HwoA&usqp=CAU",
         "description": "Bakery,Cakes & Dairy",
         "price": 40,
+        "qty": 200,
         "category": "Bakery,Cakes & Dairy",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Shah Dairy",
-                "distance" : "1.60 km"
+                "name": "Shah Dairy",
+                "address": "Shop No 6, Raj Arcade, opposite Anagan Hall, Mahavir Nagar, Panchsheel Garden, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.60 km"
             },
             {
-                "name" : "The Pastry Shop",
-                "distance" : "2.47 km"
+                "name": "The Pastry Shop",
+                "address": "Shop No 3, Bldg. No 40, Sargam Society, Oshiwara, Mhada Colony, Andheri West, Mumbai, Maharashtra",
+                "distance": "2.47 km"
             },
             {
-                "name" : "Kumar Milk Centre",
-                "distance" : "4.81 km"
+                "name": "Kumar Milk Centre",
+                "address": "Mahavir Nagar, V Souk, opposite Kamla Sports Club, Sector 10, Kandivali West, Mumbai, Maharashtra",
+                "distance": "4.81 km"
             }
         ]
     },
@@ -343,23 +408,28 @@
         "img_src": "https://www.bigbasket.com/media/uploads/p/l/70001832_2-amul-taaza-fresh-toned-milk.jpg",
         "description": "Bakery,Cakes & Dairy",
         "price": 20,
+        "qty": 500,
         "category": "Bakery,Cakes & Dairy",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Shah Dairy",
-                "distance" : "1.60 km"
+                "name": "Shah Dairy",
+                "address": "Shop No 6, Raj Arcade, opposite Anagan Hall, Mahavir Nagar, Panchsheel Garden, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.60 km"
             },
             {
-                "name" : "The Pastry Shop",
-                "distance" : "2.47 km"
+                "name": "The Pastry Shop",
+                "address": "Shop No 3, Bldg. No 40, Sargam Society, Oshiwara, Mhada Colony, Andheri West, Mumbai, Maharashtra",
+                "distance": "2.47 km"
             },
             {
-                "name" : "Kumar Milk Centre",
-                "distance" : "4.81 km"
+                "name": "Kumar Milk Centre",
+                "address": "Mahavir Nagar, V Souk, opposite Kamla Sports Club, Sector 10, Kandivali West, Mumbai, Maharashtra",
+                "distance": "4.81 km"
             }
         ]
     },
@@ -369,23 +439,28 @@
         "img_src": "https://i.ytimg.com/vi/dCVEY88Fn1k/maxresdefault.jpg",
         "description": "Bakery,Cakes & Dairy",
         "price": 70,
+        "qty": 150,
         "category": "Bakery,Cakes & Dairy",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Shah Dairy",
-                "distance" : "1.60 km"
+                "name": "Shah Dairy",
+                "address": "Shop No 6, Raj Arcade, opposite Anagan Hall, Mahavir Nagar, Panchsheel Garden, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.60 km"
             },
             {
-                "name" : "The Pastry Shop",
-                "distance" : "2.47 km"
+                "name": "The Pastry Shop",
+                "address": "Shop No 3, Bldg. No 40, Sargam Society, Oshiwara, Mhada Colony, Andheri West, Mumbai, Maharashtra",
+                "distance": "2.47 km"
             },
             {
-                "name" : "Kumar Milk Centre",
-                "distance" : "4.81 km"
+                "name": "Kumar Milk Centre",
+                "address": "Mahavir Nagar, V Souk, opposite Kamla Sports Club, Sector 10, Kandivali West, Mumbai, Maharashtra",
+                "distance": "4.81 km"
             }
         ]
     },
@@ -395,23 +470,28 @@
         "img_src": "https://www.jiomart.com/images/product/600x600/490001392/amul-butter-500-g-carton-6-20210315.jpg",
         "description": "Bakery,Cakes & Dairy",
         "price": 30,
+        "qty": 1800,
         "category": "Bakery,Cakes & Dairy",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Shah Dairy",
-                "distance" : "1.60 km"
+                "name": "Shah Dairy",
+                "address": "Shop No 6, Raj Arcade, opposite Anagan Hall, Mahavir Nagar, Panchsheel Garden, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.60 km"
             },
             {
-                "name" : "The Pastry Shop",
-                "distance" : "2.47 km"
+                "name": "The Pastry Shop",
+                "address": "Shop No 3, Bldg. No 40, Sargam Society, Oshiwara, Mhada Colony, Andheri West, Mumbai, Maharashtra",
+                "distance": "2.47 km"
             },
             {
-                "name" : "Kumar Milk Centre",
-                "distance" : "4.81 km"
+                "name": "Kumar Milk Centre",
+                "address": "Mahavir Nagar, V Souk, opposite Kamla Sports Club, Sector 10, Kandivali West, Mumbai, Maharashtra",
+                "distance": "4.81 km"
             }
         ]
     },
@@ -421,23 +501,28 @@
         "img_src": "https://cdn.igp.com/f_auto,q_auto,t_prodm/products/p-classic-pineapple-cake-2-kg--6120-m.jpg",
         "description": "Bakery,Cakes & Dairy",
         "price": 250,
+        "qty": 50,
         "category": "Bakery,Cakes & Dairy",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Shah Dairy",
-                "distance" : "1.60 km"
+                "name": "Shah Dairy",
+                "address": "Shop No 6, Raj Arcade, opposite Anagan Hall, Mahavir Nagar, Panchsheel Garden, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.60 km"
             },
             {
-                "name" : "The Pastry Shop",
-                "distance" : "2.47 km"
+                "name": "The Pastry Shop",
+                "address": "Shop No 3, Bldg. No 40, Sargam Society, Oshiwara, Mhada Colony, Andheri West, Mumbai, Maharashtra",
+                "distance": "2.47 km"
             },
             {
-                "name" : "Kumar Milk Centre",
-                "distance" : "4.81 km"
+                "name": "Kumar Milk Centre",
+                "address": "Mahavir Nagar, V Souk, opposite Kamla Sports Club, Sector 10, Kandivali West, Mumbai, Maharashtra",
+                "distance": "4.81 km"
             }
         ]
     },
@@ -447,23 +532,28 @@
         "img_src": "https://cdn.shopify.com/s/files/1/0173/7644/4470/products/DakshinGuava_750ML_BB_3DFOP_483632f1-2f28-4d7e-a8ad-238c4ec771f1_1024x1024.jpg?v=1607627555",
         "description": "Beverages",
         "price": 40,
+        "qty": 2500,
         "category": "Beverages",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Keventers Milkshake",
-                "distance" : "987 m"
+                "name": "Keventers Milkshake",
+                "address": "14/15 Raj Garden Co-opp Housing Society, Mahavir Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Coolberg Beverages",
-                "distance" : "1.26 km"
+                "name": "Coolberg Beverages",
+                "address": "Shop No. 4, Lucky Tower, MG Cross Rd Number 4, Manek Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.26 km"
             },
             {
-                "name" : "Jasmine Cold Drinks",
-                "distance" : "1.29 km"
+                "name": "Jasmine Cold Drinks",
+                "address": "Unit Number 2/9, Near Corporation Bank, Turakhia Park, MG Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.29 km"
             }
         ]
     },
@@ -473,23 +563,28 @@
         "img_src": "https://www.bigbasket.com/media/uploads/p/l/40026295-2_1-amul-lassi.jpg",
         "description": "Beverages",
         "price": 20,
+        "qty": 4100,
         "category": "Beverages",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Keventers Milkshake",
-                "distance" : "987 m"
+                "name": "Keventers Milkshake",
+                "address": "14/15 Raj Garden Co-opp Housing Society, Mahavir Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Coolberg Beverages",
-                "distance" : "1.26 km"
+                "name": "Coolberg Beverages",
+                "address": "Shop No. 4, Lucky Tower, MG Cross Rd Number 4, Manek Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.26 km"
             },
             {
-                "name" : "Jasmine Cold Drinks",
-                "distance" : "1.29 km"
+                "name": "Jasmine Cold Drinks",
+                "address": "Unit Number 2/9, Near Corporation Bank, Turakhia Park, MG Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.29 km"
             }
         ]
     },
@@ -499,23 +594,28 @@
         "img_src": "https://www.bigbasket.com/media/uploads/p/xxl/40005022_4-amul-kool-kesar.jpg",
         "description": "Beverages",
         "price": 30,
+        "qty": 3150,
         "category": "Beverages",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Keventers Milkshake",
-                "distance" : "987 m"
+                "name": "Keventers Milkshake",
+                "address": "14/15 Raj Garden Co-opp Housing Society, Mahavir Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Coolberg Beverages",
-                "distance" : "1.26 km"
+                "name": "Coolberg Beverages",
+                "address": "Shop No. 4, Lucky Tower, MG Cross Rd Number 4, Manek Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.26 km"
             },
             {
-                "name" : "Jasmine Cold Drinks",
-                "distance" : "1.29 km"
+                "name": "Jasmine Cold Drinks",
+                "address": "Unit Number 2/9, Near Corporation Bank, Turakhia Park, MG Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.29 km"
             }
         ]
     },
@@ -525,49 +625,59 @@
         "img_src": "https://images-na.ssl-images-amazon.com/images/I/61lXxMP05YL._SL1000_.jpg",
         "description": "Beverages",
         "price": 35,
+        "qty": 3100,
         "category": "Beverages",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Keventers Milkshake",
-                "distance" : "987 m"
+                "name": "Keventers Milkshake",
+                "address": "14/15 Raj Garden Co-opp Housing Society, Mahavir Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Coolberg Beverages",
-                "distance" : "1.26 km"
+                "name": "Coolberg Beverages",
+                "address": "Shop No. 4, Lucky Tower, MG Cross Rd Number 4, Manek Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.26 km"
             },
             {
-                "name" : "Jasmine Cold Drinks",
-                "distance" : "1.29 km"
+                "name": "Jasmine Cold Drinks",
+                "address": "Unit Number 2/9, Near Corporation Bank, Turakhia Park, MG Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.29 km"
             }
         ]
     },
     {
         "id": 21,
-        "name": "Winkin Cow Vanilla Thick Shakes",
+        "name": "Winkin Cow Vanilla Shakes",
         "img_src": "https://www.bigbasket.com/media/uploads/p/l/40165623-2_4-britannia-winkin-cow-vanillicious-thick-milkshake.jpg",
         "description": "Beverages",
         "price": 40,
+        "qty": 3000,
         "category": "Beverages",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Keventers Milkshake",
-                "distance" : "987 m"
+                "name": "Keventers Milkshake",
+                "address": "14/15 Raj Garden Co-opp Housing Society, Mahavir Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Coolberg Beverages",
-                "distance" : "1.26 km"
+                "name": "Coolberg Beverages",
+                "address": "Shop No. 4, Lucky Tower, MG Cross Rd Number 4, Manek Nagar, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.26 km"
             },
             {
-                "name" : "Jasmine Cold Drinks",
-                "distance" : "1.29 km"
+                "name": "Jasmine Cold Drinks",
+                "address": "Unit Number 2/9, Near Corporation Bank, Turakhia Park, MG Road, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.29 km"
             }
         ]
     },
@@ -577,23 +687,28 @@
         "img_src": "https://images-na.ssl-images-amazon.com/images/I/51LBZ%2BqRWmL.jpg",
         "description": "Snack & Branded Food",
         "price": 10,
+        "qty": 6000,
         "category": "Snack & Branded Food",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Chips and Co",
-                "distance" : "987 m"
+                "name": "Chips and Co",
+                "address": "Shop No.1, Embee Geejay Apartment, Om Shree Geetanjali Nagar, Borivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             }
         ]
     },
@@ -602,24 +717,29 @@
         "name": "Uncle Chips",
         "img_src": "https://images-na.ssl-images-amazon.com/images/I/71yFd%2Bv2ddL._SL1500_.jpg",
         "description": "Snack & Branded Food",
-        "price": 140,
+        "price": 10,
+        "qty": 8000,
         "category": "Snack & Branded Food",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Chips and Co",
-                "distance" : "987 m"
+                "name": "Chips and Co",
+                "address": "Shop No.1, Embee Geejay Apartment, Om Shree Geetanjali Nagar, Borivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             }
         ]
     },
@@ -628,24 +748,29 @@
         "name": "Doritos",
         "img_src": "https://storage.googleapis.com/shop-seo-firestore.appspot.com/gdb/doritos-sweet-chilli-tortilla-chips-25-g_1586912411.jpg",
         "description": "Snack & Branded Food",
-        "price": 140,
+        "price": 40,
+        "qty": 7500,
         "category": "Snack & Branded Food",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Chips and Co",
-                "distance" : "987 m"
+                "name": "Chips and Co",
+                "address": "Shop No.1, Embee Geejay Apartment, Om Shree Geetanjali Nagar, Borivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             }
         ]
     },
@@ -654,24 +779,29 @@
         "name": "Cornitos",
         "img_src": "https://images-na.ssl-images-amazon.com/images/I/71ZF4s0Go7L._SL1500_.jpg",
         "description": "Snack & Branded Food",
-        "price": 140,
+        "price": 40,
+        "qty": 6000,
         "category": "Snack & Branded Food",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Chips and Co",
-                "distance" : "987 m"
+                "name": "Chips and Co",
+                "address": "Shop No.1, Embee Geejay Apartment, Om Shree Geetanjali Nagar, Borivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             }
         ]
     },
@@ -680,24 +810,29 @@
         "name": "Kurkure",
         "img_src": "https://neareshop.s3.ap-south-1.amazonaws.com/2020/05/Kurkure-Masala-Munch-Bridges-25-g.jpg",
         "description": "Snack & Branded Food",
-        "price": 140,
+        "price": 10,
+        "qty": 7000,
         "category": "Snack & Branded Food",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Chips and Co",
-                "distance" : "987 m"
+                "name": "Chips and Co",
+                "address": "Shop No.1, Embee Geejay Apartment, Om Shree Geetanjali Nagar, Borivali West, Mumbai, Maharashtra",
+                "distance": "987 m"
             },
             {
-                "name" : "Bhalla Stores",
-                "distance" : "1.18 km"
+                "name": "Bhalla Stores",
+                "address": "Shop No. 6, Bobby Shopping Centre, Mahatma Gandhi Rd, Kandivali West, Mumbai, Maharashtra",
+                "distance": "1.18 km"
             },
             {
-                "name" : "D-Mart",
-                "distance" : "1.79 km"
+                "name": "D-Mart",
+                "address": "Shop No.4, Amber Bldg. Suresh Nagar, Lokhandwala Road, Four Bunglows, Andheri West, Mumbai, Maharashtra",
+                "distance": "1.79 km"
             }
         ]
     },
@@ -706,24 +841,29 @@
         "name": "Eggs",
         "img_src": "https://solidstarts.com/wp-content/uploads/when-can-babies-eat-eggs.jpg",
         "description": "Eggs,Meat & Fish",
-        "price": 140,
+        "price": 70,
+        "qty": 800,
         "category": "Eggs,Meat & Fish",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     },
@@ -733,23 +873,28 @@
         "img_src": "https://5.imimg.com/data5/GJ/RX/BX/SELLER-27331413/boiler-chicken-meat-500x500.jpg",
         "description": "Eggs,Meat & Fish",
         "price": 140,
+        "qty": 1500,
         "category": "Eggs,Meat & Fish",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     },
@@ -758,24 +903,29 @@
         "name": "Fish",
         "img_src": "https://previews.123rf.com/images/astockstudio/astockstudio1905/astockstudio190500020/124686341-close-up-two-pieces-of-fresh-fish-meat-salmon-on-a-wooden-board-on-a-white-background-.jpg",
         "description": "Eggs,Meat & Fish",
-        "price": 140,
+        "price": 100,
+        "qty": 2500,
         "category": "Eggs,Meat & Fish",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     },
@@ -784,24 +934,29 @@
         "name": "Mutton",
         "img_src": "https://4.imimg.com/data4/AE/QM/MY-29524681/mutton-meat-500x500.jpg",
         "description": "Eggs,Meat & Fish",
-        "price": 140,
+        "price": 700,
+        "qty": 4035,
         "category": "Eggs,Meat & Fish",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     },
@@ -810,24 +965,29 @@
         "name": "Pork",
         "img_src": "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/globalmeatnews.com/article/2018/10/26/us-lifts-ban-on-polish-pork-meat-imports/8768399-1-eng-GB/US-lifts-ban-on-Polish-pork-meat-imports_wrbm_large.jpg",
         "description": "Eggs,Meat & Fish",
-        "price": 140,
+        "price": 500,
+        "qty": 3000,
         "category": "Eggs,Meat & Fish",
-        "retailers" : [
+        "retailers": [
             {
-                "name" : "Fresho",
-                "distance" : "458 m"
+                "name": "Fresho",
+                "address": "Shop No. 16 Bldg, No. 9A, Gandhi Nagar, Neelam Nagar, Phase - II, Mulund East, Mumbai, Maharashtra",
+                "distance": "458 m"
             },
             {
-                "name" : "Agarwal Stores",
-                "distance" : "759 m"
+                "name": "Agarwal Stores",
+                "address": "Shop No. 14, G Floor, Rukkal bai Palace, St Mary Rd, Mazgaon, Mumbai, Maharashtra",
+                "distance": "759 m"
             },
             {
-                "name" : "Vishal Super Market",
-                "distance" : "1.32 km"
+                "name": "Vishal Super Market",
+                "address": "Shop no. 8, Sahdev Bldg, Vishal Nagar, Mith Chouki, Marve Rd, Malad West, Mumbai, Maharashtra",
+                "distance": "1.32 km"
             },
             {
-                "name" : "Patel Super Market",
-                "distance" : "2.55 km"
+                "name": "Patel Super Market",
+                "address": "Shop No 33 - 35, Viceroy Court, opp. Domino's Pizza, Thakur Village, Kandivali East, Mumbai, Maharashtra",
+                "distance": "2.55 km"
             }
         ]
     }

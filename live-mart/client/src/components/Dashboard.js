@@ -31,7 +31,7 @@ import RetailerItems from './RetailerItems'
 import RetailerDashboard from './RetailerDashboard';
 import Orders from './OrderDetails'
 
-function Copyright () {
+function Copyright() {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
@@ -177,8 +177,8 @@ const useStyles = makeStyles(theme => ({
 
 var currentCategory = ''
 
-export default function Dashboard (props) {
-  
+export default function Dashboard(props) {
+
   let currentUser = useSelector(state => state.auth.name)
   let profileImg = useSelector(state => state.auth.picture)
   let userCart = useSelector(state => state.auth.cart)
@@ -189,8 +189,8 @@ export default function Dashboard (props) {
   const [open, setOpen] = React.useState(true)
   const [currentCard, setCurrentCard] = React.useState('')
   const [changeItemCard, setChangeItemCard] = React.useState(false)
-  const [showDashboard,setShowDashboard] = React.useState(false)
-  const [showOrders,setShowOrders] = React.useState(false)
+  const [showDashboard, setShowDashboard] = React.useState(false)
+  const [showOrders, setShowOrders] = React.useState(false)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -227,7 +227,7 @@ export default function Dashboard (props) {
     setShowOrders(!showOrders)
   }
 
-  function addItemCard (itemCard) {
+  function addItemCard(itemCard) {
     const { id, name, img_src, description, price, category } = itemCard
     if (category === currentCategory) {
       return (
@@ -247,7 +247,7 @@ export default function Dashboard (props) {
   }
 
   function renderItemDetails (itemCard) {
-    const { id, name, img_src, description, price} = itemCard
+    const { id, name, img_src, description, price, retailers} = itemCard
     if (name === currentCard) {
       return (
         <ItemDetails
@@ -257,12 +257,13 @@ export default function Dashboard (props) {
           img={img_src}
           desc={description}
           price={price}
+          retailers={retailers}
         />
       )
     }
     return null
   }
-  
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -347,7 +348,7 @@ export default function Dashboard (props) {
       >
         <div className={classes.toolbarIcon}>
           <Grid container justify='center'>
-            <IconButton>
+            <IconButton href="http://localhost:3000/userprofile">
               {currentUser && (
                 <Avatar className={classes.profileIcon} src={profileImg}>
                   {currentUser[0]}
@@ -363,9 +364,9 @@ export default function Dashboard (props) {
           </IconButton>
         </div>
         <Divider />
-        <CustomerItems handleCategory={handleCategory} handleOrders={handleOrders}/>
+        <CustomerItems handleCategory={handleCategory} handleOrders={handleOrders} />
         <Divider />
-        <RetailerItems handleDashboard={handleDashboard}/>
+        <RetailerItems handleDashboard={handleDashboard} />
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -377,10 +378,10 @@ export default function Dashboard (props) {
             {Items.map(renderItemDetails)}
           </Grid>
           <Grid container xs={12} justify='center'>
-            {showDashboard && <RetailerDashboard/>}
+            {showDashboard && <RetailerDashboard />}
           </Grid>
           <Grid container xs={12} justify='center'>
-            {showOrders && <Orders/>}
+            {showOrders && <Orders />}
           </Grid>
           <Box pt={4}>
             <Copyright />
