@@ -1,21 +1,33 @@
+const express = require('express')
 const mongoose = require('mongoose')
-var users = require('./../models/User.js');
 const User = mongoose.model('users')
-const bodyParser = require('body-parser');
 
 module.exports = app => {
-    app.use(bodyParser.urlencoded({ extended: true }));
-    app.post('/usersignup', (req, res) => {
-        const userDetails = new User({
-            name: req.body.firstName + ' ' + req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-            address: req.body.address1 + req.body.address2
-        });
-        userDetails.save(function (err) {
-            if (err) return handleError(err)
-        });
-        console.log(userDetails);
-        res.redirect('http://localhost:3000');
+  app.use(express.json())
+  app.use(express.urlencoded({ extended: false }))
+
+  app.post('/userSignup', (req, res) => {
+    const newUser = {
+      name: req.body.firstName + ' ' + req.body.lastName,
+      email: req.body.email,
+      password: req.body.password,
+      address: req.body.address1 + ' ' + req.body.address2
+    }
+    new User({
+      name: newUser.name,
+      email: newUser.email,
+      password: newUser.password,
+      address: newUser.address,
+      role: {
+        customer: req.body.cutomer || false,
+        retailer: req.body.retailer || false,
+        wholeseller: req.body.wholeseller || false
+      }
     })
+      .save()
+      .then((err) => {
+        console.log(err)
+      })
+    res.redirect('http://localhost:3000/')
+  })
 }

@@ -139,6 +139,16 @@ export default function VerifyOTP () {
           >
             Verify OTP
           </Button>
+          <Button
+            type='submit'
+            fullWidth
+            href='/dashboard'
+            variant='contained'
+            color='primary'
+            className={classes.submit}
+          >
+            Verify OTP
+          </Button>
           <Box mt={5}>
             <Copyright />
           </Box>

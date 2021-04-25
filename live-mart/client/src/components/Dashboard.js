@@ -350,7 +350,7 @@ export default function Dashboard (props) {
             <IconButton>
               {currentUser && (
                 <Avatar className={classes.profileIcon} src={profileImg}>
-                  A
+                  {currentUser[0]}
                 </Avatar>
               )}
             </IconButton>

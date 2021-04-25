@@ -38,3 +38,4 @@ export const checkout = userId => async dispatch => {
 
   dispatch({ type: CHECKOUT, payload: res.data })
 }
+

@@ -1,6 +1,8 @@
 const passport = require('passport')
+const cookieParser = require('cookie-parser')
 
 module.exports = app => {
+  app.use(cookieParser())
   app.get(
     '/auth/google',
     passport.authenticate('google', { scope: ['profile', 'email'] })
@@ -20,11 +22,15 @@ module.exports = app => {
 
   app.get('/api/logout', (req, res) => {
     req.logout()
+    res.clearCookie('user')
     res.redirect('http://localhost:3000/')
   })
 
   app.get('/api/current_user', (req, res) => {
-    res.status(200).json(req.user)
+    res.status(200).json(req.user||req.cookies.user)
   })
 
+  app.get('/api/token', (req, res) => {
+    res.status(200).json(req.cookies.otp)
+  })
 }

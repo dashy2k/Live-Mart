@@ -133,7 +133,7 @@ export default function Login (props) {
       <Typography component='h1' variant='h5'>
         Sign in
       </Typography>
-      <form className={classes.form} noValidate>
+      <form className={classes.form} validate action="http://localhost:5000/signInCheck" method="post">
         <TextField
           InputProps={{
             startAdornment: (
@@ -180,7 +180,6 @@ export default function Login (props) {
           variant='contained'
           color='primary'
           className={classes.signIn}
-          href='/verifyOTP'
         >
           Sign In
         </Button>

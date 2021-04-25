@@ -5,13 +5,19 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
     googleId: {
         type: String,
-        default: []
+        default: ""
     },
     name: String,
     picture: String,
     email: String,
-    password: String,
-    address: String,
+    password: {
+        type : String,
+        default : ""
+    },
+    address: {
+        type : String,
+        default : ""
+    },
     cart: {
         type: Array,
         default: []
@@ -26,8 +32,14 @@ const userSchema = new Schema({
             type: Boolean,
             default: true
         },
-        retailer: Boolean,
-        wholesaler: Boolean,
+        retailer: {
+            type : Boolean,
+            default : false
+        },
+        wholeseller : {
+            type : Boolean,
+            default : false
+        }
     }
 })
 

@@ -16,6 +16,7 @@ import FormLabel from '@material-ui/core/FormLabel'
 import FormControl from '@material-ui/core/FormControl'
 import FormGroup from '@material-ui/core/FormGroup'
 import Paper from '@material-ui/core/Paper'
+import axios from 'axios'
 
 function Copyright() {
   return (
@@ -102,7 +103,7 @@ export default function SignUp(props) {
             <Typography component='h1' variant='h5'>
               Sign up
         </Typography>
-            <form className={classes.form} action="http://localhost:5000/usersignup" method="post">
+            <form className={classes.form} action="http://localhost:5000/userSignup" method="post">
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
