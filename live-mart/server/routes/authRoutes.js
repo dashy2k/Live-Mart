@@ -29,4 +29,8 @@ module.exports = app => {
   app.get('/api/current_user', (req, res) => {
     res.status(200).json(req.user||req.cookies.user)
   })
+
+  app.get('/api/otp', (req, res) => {
+    res.status(200).json(req.cookies.otp)
+  })
 }

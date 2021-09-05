@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 const User = mongoose.model('users')
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const mailer = require('../services/OTPMailer')
+const authenticator = require('otplib').totp
+const secret = 'KVKFKRCPNZQUYMLXOVYDSQKJKZDTSRLD'
+const token = authenticator.generate(secret)
 
 module.exports = app => {
 
@@ -24,6 +28,8 @@ module.exports = app => {
         res.redirect('http://localhost:3000/')
       } else if (UserProfile.password == req.body.password) {
         res.cookie('user', UserProfile, options)
+        mailer(token)
+        res.cookie('otp',token,options)
         console.log(req.cookies)
         res.redirect('http://localhost:3000/verifyOTP')
       } else {

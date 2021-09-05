@@ -14,7 +14,6 @@ const addToCart = require('./services/addToCartService')
 const Checkout = require('./services/userHistory')
 const signup = require('./routes/signUp')
 const signIn = require('./routes/signIn')
-const OTPMailer = require('./services/OTPMailer')
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
@@ -22,10 +21,6 @@ mongoose.connect(keys.mongoURI, {
 })
 
 const app = express()
-
-const authenticator = require('otplib').totp
-const secret = 'KVKFKRCPNZQUYMLXOVYDSQKJKZDTSRLD'
-const token = authenticator.generate(secret)
 
 app.use(
   cookieSession({
@@ -46,7 +41,5 @@ addToCart(app)
 signIn(app)
 signup(app)
 Checkout(app)
-
-OTPMailer(token)
 
 app.listen(5000)
