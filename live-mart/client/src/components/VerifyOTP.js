@@ -10,6 +10,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import { Link } from '@material-ui/core'
 import LockIcon from '@material-ui/icons/LockOpenRounded'
 import { Grid, CssBaseline, Paper } from '@material-ui/core'
+import axios from 'axios'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -97,6 +98,9 @@ function Copyright () {
   )
 }
 
+let cmpToken = ""
+let validToken = ''
+
 export default function VerifyOTP () {
   const classes = useStyles()
 
@@ -104,10 +108,18 @@ export default function VerifyOTP () {
 
   const [sendDisabled,setSendDisabled] = React.useState(false)
 
+  validToken = axios.get('/api/otp').then(function (response) {
+    cmpToken = response.data
+  })
+
   const handleChange = event => {
     if (event.target.value.length === 6) {
       setVerify(true)
     }
+  }
+
+  const handleClick = () => {
+      setSendDisabled(true)
   }
 
   return (
@@ -160,7 +172,7 @@ export default function VerifyOTP () {
               color='primary'
               className={classes.submit}
               disabled={sendDisabled}
-              onClick={() => setSendDisabled(!sendDisabled)}
+              onClick={handleClick}
             >
               Send OTP
             </Button>

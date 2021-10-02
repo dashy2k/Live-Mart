@@ -11,13 +11,15 @@ module.exports = app => {
       name: req.body.firstName + ' ' + req.body.lastName,
       email: req.body.email,
       password: req.body.password,
-      address: req.body.address1 + ' ' + req.body.address2
+      address: req.body.address1 + ' ' + req.body.address2,
+      phone : req.body.phone
     }
     new User({
       name: newUser.name,
       email: newUser.email,
       password: newUser.password,
       address: newUser.address,
+      phone : newUser.phone,
       role: {
         customer: req.body.cutomer || false,
         retailer: req.body.retailer || false,

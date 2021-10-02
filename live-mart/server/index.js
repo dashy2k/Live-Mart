@@ -1,7 +1,7 @@
 const express = require('express')
 const authRoutes = require('./routes/authRoutes')
 const mongoose = require('mongoose')
-const keys = require('./config/keys')
+const keys = require('./config/authKeys')
 const cookieSession = require('cookie-session')
 var cookieParser = require('cookie-parser')
 const passport = require('passport')
@@ -14,7 +14,6 @@ const addToCart = require('./services/addToCartService')
 const Checkout = require('./services/userHistory')
 const signup = require('./routes/signUp')
 const signIn = require('./routes/signIn')
-const OTPMailer = require('./services/OTPMailer')
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
@@ -23,16 +22,14 @@ mongoose.connect(keys.mongoURI, {
 
 const app = express()
 
-const authenticator = require('otplib').totp
-const secret = 'KVKFKRCPNZQUYMLXOVYDSQKJKZDTSRLD'
-const token = authenticator.generate(secret)
-
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
     keys: [keys.cookieKey]
   })
 )
+
+const PORT = 5000
 
 mongoose.set('useFindAndModify', false)
 
@@ -47,6 +44,7 @@ signIn(app)
 signup(app)
 Checkout(app)
 
-OTPMailer(token)
-
-app.listen(5000)
+app.listen(PORT, function(err){
+  if (err) console.log(err);
+  console.log("Server listening on PORT", PORT);
+});

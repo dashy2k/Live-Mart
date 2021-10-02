@@ -20,14 +20,13 @@ module.exports = app => {
     console.log(req.body)
     User.findOne({ email: req.body.email }, (err, UserProfile) => {
       if (err || UserProfile == null) {
-        console.log(err)
-        res.redirect('http://localhost:3000/')
+        res.redirect('/error')
       } else if (UserProfile.password == req.body.password) {
         res.cookie('user', UserProfile, options)
         console.log(req.cookies)
-        res.redirect('http://localhost:3000/verifyOTP')
+        res.redirect('http://localhost:3000/dashboard')
       } else {
-        res.redirect('http://localhost:3000/')
+        res.redirect('/error')
       }
     })
   })
