@@ -12,7 +12,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import AddIcon from '@material-ui/icons/Add'
 import DeleteIcon from '@material-ui/icons/Delete'
-import FolderIcon from '@material-ui/icons/Folder'
 import React from 'react'
 import Items from './data/items.json';
 
@@ -29,13 +28,6 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function generate(element) {
-  return [0, 1, 2].map(value =>
-    React.cloneElement(element, {
-      key: value
-    })
-  )
-}
 function addRetailerItems(items) {
 
   return (<ListItem>
@@ -62,7 +54,6 @@ function addRetailerItems(items) {
 
 export default function RenderInventory() {
   const classes = useStyles()
-  const [secondary, setSecondary] = React.useState(false)
 
   return (
     <React.Fragment>

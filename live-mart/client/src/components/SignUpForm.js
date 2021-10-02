@@ -16,7 +16,6 @@ import FormLabel from '@material-ui/core/FormLabel'
 import FormControl from '@material-ui/core/FormControl'
 import FormGroup from '@material-ui/core/FormGroup'
 import Paper from '@material-ui/core/Paper'
-import axios from 'axios'
 
 function Copyright() {
   return (

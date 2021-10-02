@@ -4,7 +4,6 @@ import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import { Grid } from '@material-ui/core/'
 import { useHistory } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles'
 import * as actions from '../actions'
 import { connect, useSelector } from 'react-redux'
 

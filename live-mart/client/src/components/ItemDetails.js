@@ -20,7 +20,6 @@ import React from 'react'
 import ReactStars from 'react-rating-stars-component'
 import { connect,useSelector } from 'react-redux'
 import * as actions from '../actions'
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';

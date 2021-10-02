@@ -22,18 +22,8 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function generate(element) {
-  return [0, 1, 2].map(value =>
-    React.cloneElement(element, {
-      key: value
-    })
-  )
-}
-
 export default function Inventory() {
   const classes = useStyles()
-  const [dense, setDense] = React.useState(false)
-  const [secondary, setSecondary] = React.useState(false)
 
   return (
     <React.Fragment>

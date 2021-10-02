@@ -6,7 +6,6 @@ import SignUp from './SignUpForm'
 import Dashboard from './Dashboard'
 import Checkout from './UserCheckout'
 import SignIn from './SignInForm'
-import VerifyOTP from './VerifyOTP'
 import * as actions from '../actions'
 import UserProfile from './UserProfile'
 
@@ -22,7 +21,6 @@ function App(props) {
           <Route path='/signup' component={SignUp} />
           <Route path='/dashboard' component={Dashboard} />
           <Route path='/checkout' component={Checkout} />
-          <Route path='/verifyOTP' component={VerifyOTP} />
           <Route path='/userprofile' component={UserProfile} />
         </div>
       </BrowserRouter>

@@ -4,7 +4,6 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import { makeStyles } from '@material-ui/core/styles'
-import InboxIcon from '@material-ui/icons/Inbox'
 import React from 'react'
 import LocalShippingIcon from '@material-ui/icons/LocalShipping'
 import Stepper from '@material-ui/core/Stepper'
@@ -34,10 +33,6 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3)
   }
 }))
-
-function ListItemLink (props) {
-  return <ListItem button component='a' {...props} />
-}
 
 function getSteps () {
   return ['Order placed', 'Order Dispatched', 'In Transit', 'Delivered']

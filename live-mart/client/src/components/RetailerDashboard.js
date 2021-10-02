@@ -109,10 +109,6 @@ export default function RetailerDashboard() {
   const [showStores, setShowStores] = useState(false)
   const [showOrders, setShowOrders] = useState(false)
 
-  const handleDelete = () => {
-    console.info('You clicked the delete icon.')
-  }
-
   const handleStores = () => {
     setShowStores(!showStores)
     setShowOrders(false)
