@@ -17,7 +17,7 @@ module.exports = app => {
   )
 
   app.get('/error', (req, res) => {
-    res.send('Login Failed')
+    res.redirect('http://localhost:3000/')
   })
 
   app.get('/api/logout', (req, res) => {
@@ -33,4 +33,5 @@ module.exports = app => {
   app.get('/api/otp', (req, res) => {
     res.status(200).json(req.cookies.otp)
   })
+
 }

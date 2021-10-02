@@ -1,7 +1,7 @@
 const express = require('express')
 const authRoutes = require('./routes/authRoutes')
 const mongoose = require('mongoose')
-const keys = require('./config/keys')
+const keys = require('./config/authKeys')
 const cookieSession = require('cookie-session')
 var cookieParser = require('cookie-parser')
 const passport = require('passport')
@@ -29,6 +29,8 @@ app.use(
   })
 )
 
+const PORT = 5000
+
 mongoose.set('useFindAndModify', false)
 
 app.use(passport.initialize())
@@ -42,4 +44,7 @@ signIn(app)
 signup(app)
 Checkout(app)
 
-app.listen(5000)
+app.listen(PORT, function(err){
+  if (err) console.log(err);
+  console.log("Server listening on PORT", PORT);
+});
